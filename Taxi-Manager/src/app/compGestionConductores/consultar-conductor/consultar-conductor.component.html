@@ -1,1 +1,52 @@
-<p>consultar-conductor works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultar Conductores</title>
+</head>
+<body>
+  <header>
+    <h1>Consultar Conductores</h1>
+  </header>
+  <main>
+    <section id="filtros-conductores">
+      <h2>Filtrar Conductores</h2>
+      <form>
+        <label for="fecha-registro">Fecha de Registro:</label>
+        <input type="date" id="fecha-registro">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre">
+        <label for="tipo-licencia">Tipo de Licencia:</label>
+        <select id="tipo-licencia">
+          <option value="">Seleccionar</option>
+          <option value="A">Tipo A</option>
+          <option value="B">Tipo B</option>
+          <option value="C">Tipo C</option>
+        </select>
+        <label for="identificacion">Identificación Única:</label>
+        <input type="text" id="identificacion" pattern="[0-9]{4}" title="Debe ser un número de 4 dígitos">
+        <button type="button" onclick="aplicarFiltros()">Aplicar Filtros</button>
+      </form>
+    </section>
+    <section id="resultado-filtros">
+      <!-- Aquí se mostraría la lista de conductores filtrados -->
+      <!-- Ejemplo de un conductor en la lista -->
+      <!-- <div class="conductor">
+        <span>Nombre del Conductor</span>
+        <span>Fecha de Registro: 2024-04-29</span>
+        <span>Tipo de Licencia: Tipo B</span>
+        <span>ID Única: 1234</span>
+        <button onclick="editarConductor()">Editar</button>
+        <button onclick="eliminarConductor()">Eliminar</button>
+        <button onclick="actualizarDocumentos()">Actualizar Documentos</button>
+      </div> -->
+      <!-- Más conductores en la lista -->
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Taxi Manager App</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
