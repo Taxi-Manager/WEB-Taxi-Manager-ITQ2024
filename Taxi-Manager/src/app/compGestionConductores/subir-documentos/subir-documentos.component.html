@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subir Documentos del Conductor</title>
+</head>
+<body>
+  <header>
+    <h1>Subir Documentos del Conductor</h1>
+  </header>
+  <main>
+    <section id="subida-documentos">
+      <h1>Datos del Conductor</h1>
+      <h2>Subir Documentos</h2>
+      <form enctype="multipart/form-data">
+        <label for="licencia-conducir">Licencia de conducir para taxi (PDF):</label>
+        <input type="file" id="licencia-conducir" accept=".pdf" required>
+        <label for="identificacion-ine">Identificación oficial (INE) (PDF):</label>
+        <input type="file" id="identificacion-ine" accept=".pdf" required>
+        <label for="comprobante-domicilio">Comprobante de domicilio (PDF, no mayor a 3 meses):</label>
+        <input type="file" id="comprobante-domicilio" accept=".pdf" required>
+        <button onclick="validarDocumentos()">Subir Documentos</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

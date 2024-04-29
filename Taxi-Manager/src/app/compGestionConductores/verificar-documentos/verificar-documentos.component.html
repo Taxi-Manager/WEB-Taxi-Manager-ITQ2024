@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificar Documentos del Conductor</title>
+
+</head>
+<body>
+  <header>
+    <h1>Verificar Documentos del Conductor</h1>
+  </header>
+  <main>
+    <section id="lista-conductores">
+      <h2>Lista de Conductores Registrados</h2>
+      <ul>
+        <!-- Ejemplo de conductor en la lista -->
+        <li>
+          <span>Nombre del Conductor</span>
+          <span>Número de Teléfono</span>
+          <span>Estado de Verificación: <strong>Verificado</strong></span>
+          <button onclick="mostrarDocumentos()">Ver y Verificar Documentos</button>
+        </li>
+        <!-- Más conductores en la lista -->
+      </ul>
+    </section>
+    <section id="verificacion-documentos" style="display: none;">
+      <h2>Verificación de Documentos</h2>
+      <div id="documentos-conductor">
+        <h3>Licencia de conducir para taxi vigente</h3>
+        <input type="file" accept="image/*" id="licencia-conducir" required>
+        <h3>Identificación oficial (INE)</h3>
+        <input type="file" accept="image/*" id="identificacion-ine" required>
+        <h3>Comprobante de domicilio (no mayor a 3 meses)</h3>
+        <input type="file" accept="image/*" id="comprobante-domicilio" required>
+      </div>
+      <button onclick="cargarDocumentos()">Cargar Documentos Verificados</button>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Taxi Manager App</p>
+  </footer>
+  
+</body>
+</html>

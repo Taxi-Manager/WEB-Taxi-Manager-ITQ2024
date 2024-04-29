@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Conductores - Taxi Manager</title>
+    
+</head>
+<body>
+    <h1>Gestión de Conductores</h1>
+
+    <!-- Sección de Lista de Conductores -->
+    <section>
+        <h2>Lista de Conductores</h2>
+        <ul id="driverList">
+            <!-- Aquí se cargarán dinámicamente los conductores desde JavaScript -->
+        </ul>
+    </section>
+
+    <!-- Sección de Formulario de Edición de Conductor -->
+    <section id="driverFormSection" style="display: none;">
+        <h2>Editar Conductor</h2>
+        <form id="driverForm">
+            <div>
+                <label for="nombreCompleto">Nombre Completo:</label>
+                <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+            </div>
+            <div>
+                <label for="domicilio">Domicilio:</label>
+                <input type="text" id="domicilio" name="domicilio" required>
+            </div>
+            <div>
+                <label for="telefono">Número Telefónico:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            <div>
+                <label for="licencia">Licencia de Conducir:</label>
+                <input type="file" id="licencia" name="licencia" accept=".pdf,.jpg,.png">
+            </div>
+            <div>
+                <label for="identificacion">Identificación Oficial:</label>
+                <input type="file" id="identificacion" name="identificacion" accept=".pdf,.jpg,.png">
+            </div>
+            <div>
+                <label for="comprobanteDomicilio">Comprobante de Domicilio:</label>
+                <input type="file" id="comprobanteDomicilio" name="comprobanteDomicilio" accept=".pdf,.jpg,.png">
+            </div>
+            <div>
+                <button type="button" id="saveButton">Guardar Cambios</button>
+                <button type="button" id="cancelButton">Cancelar</button>
+            </div>
+        </form>
+    </section>
+
+    
+</body>
+</html>
