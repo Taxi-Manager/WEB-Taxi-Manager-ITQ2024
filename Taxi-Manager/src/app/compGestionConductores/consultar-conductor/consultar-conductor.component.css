@@ -34,22 +34,23 @@ body {
   input[type="text"],
   input[type="date"],
   select,
+
   button {
     margin-bottom: 15px;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 3px solid #F9CF8B;
     border-radius: 4px;
   }
   
   button {
-    background-color: #007bff;
+    background-color: #F28482;
     color: #fff;
     border: none;
     cursor: pointer;
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #F9CF8B;
   }
   
   footer {
@@ -60,5 +61,8 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
+  }
+  header{
+    background-color: #F6BD60;
   }
   
