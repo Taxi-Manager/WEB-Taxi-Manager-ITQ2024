@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { crearuser } from './crearfb';
 
 @Component({
   selector: 'app-new-user',
@@ -8,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './new-user.component.css'
 })
 export class NewUserComponent {
-
+  constructor() {
+    document.addEventListener('DOMContentLoaded', () => {
+      crearuser();    });
+  }
 }
