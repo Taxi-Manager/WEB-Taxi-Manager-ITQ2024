@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,body{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background: #ddd;
+  
+}
+
+.btn form{
+      transform: scale(0);
+
+}
+
+.btn{
+   width: 25%;
+   height: 10%;
+background: linear-gradient(-135deg, #f0a418, #facb4b);   border-radius: 22px;
+   display: flex;
+   align-items: center; 
+   justify-content: center;
+   display: flex;
+   box-shadow: 0px 40px 40px rgba(0,0,0,0.1);
+   transition: all 0.5s ease;
+}
+.btn .btn-t{
+   position: absolute;
+   color: #fff;
+   font-size: 27px;
+    text-align: center;
+      transition: all 0.5s ease;
+   font-family: 'Poppins', sans-serif;
+
+}
+.btn:hover {
+height: 70%;
+   width: 30%;
+background: #fff;
+      box-shadow: 0px 40px 40px rgba(252, 178, 64,0.15);
+
+}
+.btn:hover .btn-t{
+   font-weight: bold; 
+   font-size: 30px;
+   color: #FCB240;
+   padding-bottom: 25%;
+   
+
+}
+.btn:hover form{
+     transition: all 0.5s ease;
+   transform: scale(.89);
+display: block;
+}
+.btn form label{
+   font-family: 'Poppins', sans-serif;
+   position: relative;
+   color: grey;
+   top: -35px;
+   text-align: left;
+   pointer-events: none;
+     transition: all 0.3s ease;
+
+}
+
+.btn form input{
+  height: 45px;
+  width: 100%;
+  position: relative;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+   
+
+   margin-top: 4%;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+
+}
+.btn form input:focus + .label,
+.btn form input:valid + label{
+   color: #FCB240;
+   top: -58px;
+   background: white;
+
+}
+
+input[type="submit"]{
+  color: #FCB240;
+  border: none;
+  padding-right: 5%;
+  top: 17.5%;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #fff;
+border: 3.5px;
+  border-style: solid;
+  border-color: #f8c86a;
+  transition: all 0.2s ease;
+}
+
+input[type="submit"]:hover{
+  transform: scale(1.05);
+    background: linear-gradient(-135deg, #f8c86a, #f0a418);
+  color: white;
+
+}
+input[type="submit"]:active{
+  transform: scale(0.95);
+}
+
+.btn form input:valid + input[type="submit"]{
+     transform: scale(0.95);
+
+}
