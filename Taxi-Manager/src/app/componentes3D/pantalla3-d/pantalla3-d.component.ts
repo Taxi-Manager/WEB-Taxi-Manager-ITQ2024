@@ -1,3 +1,4 @@
+import { NONE_TYPE } from '@angular/compiler';
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import {
   Scene,
@@ -57,7 +58,7 @@ export class Pantalla3DComponent  {
     );
 
     this.camera.attachControl(this.canvas, false);
-    this.camera.setPosition(new Vector3(200, 1000, 200));
+    this.camera.setPosition(new Vector3(0, 0, 100));
 
     this.camera.wheelPrecision = 100;
     this.camera.minZ = 0.3;
@@ -71,20 +72,21 @@ export class Pantalla3DComponent  {
   }
 
   CreateScene(): Scene {
-
+    const scene2 = new Scene(this.engine);
     const scene = new Scene(this.engine);
     const envTex = CubeTexture.CreateFromPrefilteredData(
       "./assets/images/sky.env",
       scene
     );
 
-    envTex.rotationY = 180;
+    envTex.rotationY = 1;
 
     scene.environmentTexture = envTex;
     scene.createDefaultSkybox(envTex, true);
     scene.environmentIntensity = 1;
 
-    return scene;
+    //return scene;
+    return scene2;
   }
 
   async CreateBox(): Promise<void> {
@@ -99,12 +101,18 @@ export class Pantalla3DComponent  {
       console.log(newMeshes)
       //Meshes
       const cubo_body = newMeshes[1]
+      cubo_body.rotation.x = Math.PI;
       const cubo_tapa = newMeshes[2]
+      cubo_tapa.rotation.x = Math.PI;
       const letter_katavo = newMeshes[3]
+      letter_katavo.rotation.x = Math.PI;
       const lightSphere= newMeshes[4]
+
 
       light.parent = lightSphere
 
+      
+      
 
       //Glow effect
       const gl = new GlowLayer("glow", this.scene);

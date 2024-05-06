@@ -38,6 +38,51 @@
 			]
 		}
 	],
+	"animations":[
+		{
+			"channels":[
+				{
+					"sampler":0,
+					"target":{
+						"node":0,
+						"path":"translation"
+					}
+				},
+				{
+					"sampler":1,
+					"target":{
+						"node":0,
+						"path":"rotation"
+					}
+				},
+				{
+					"sampler":2,
+					"target":{
+						"node":0,
+						"path":"scale"
+					}
+				}
+			],
+			"name":"13914_Taxi_v2_L1Action",
+			"samplers":[
+				{
+					"input":12,
+					"interpolation":"LINEAR",
+					"output":13
+				},
+				{
+					"input":12,
+					"interpolation":"LINEAR",
+					"output":14
+				},
+				{
+					"input":12,
+					"interpolation":"LINEAR",
+					"output":15
+				}
+			]
+		}
+	],
 	"materials":[
 		{
 			"doubleSided":true,
@@ -264,6 +309,36 @@
 			"componentType":5123,
 			"count":256128,
 			"type":"SCALAR"
+		},
+		{
+			"bufferView":12,
+			"componentType":5126,
+			"count":1,
+			"max":[
+				0.041666666666666664
+			],
+			"min":[
+				0.041666666666666664
+			],
+			"type":"SCALAR"
+		},
+		{
+			"bufferView":13,
+			"componentType":5126,
+			"count":1,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":14,
+			"componentType":5126,
+			"count":1,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":15,
+			"componentType":5126,
+			"count":1,
+			"type":"VEC3"
 		}
 	],
 	"bufferViews":[
@@ -338,6 +413,26 @@
 			"byteLength":512256,
 			"byteOffset":3205472,
 			"target":34963
+		},
+		{
+			"buffer":0,
+			"byteLength":4,
+			"byteOffset":3717728
+		},
+		{
+			"buffer":0,
+			"byteLength":12,
+			"byteOffset":3717732
+		},
+		{
+			"buffer":0,
+			"byteLength":16,
+			"byteOffset":3717744
+		},
+		{
+			"buffer":0,
+			"byteLength":12,
+			"byteOffset":3717760
 		}
 	],
 	"samplers":[
@@ -348,7 +443,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":3717728,
+			"byteLength":3717772,
 			"uri":"taxi.bin"
 		}
 	]
