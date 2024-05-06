@@ -6,12 +6,14 @@ import {EditDeleteUpdateComponent} from './compGestionConductores/edit-delete-up
 import {VerificarDocumentosComponent} from './compGestionConductores/verificar-documentos/verificar-documentos.component';
 import { SubirDocumentosComponent } from './compGestionConductores/subir-documentos/subir-documentos.component';
 import { ConsultarConductorComponent } from './compGestionConductores/consultar-conductor/consultar-conductor.component';
+import { Pantalla3DComponent } from './componentes3D/pantalla3-d/pantalla3-d.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,CrearConductorComponent,EditDeleteUpdateComponent, VerificarDocumentosComponent,
-    SubirDocumentosComponent, ConsultarConductorComponent
+    SubirDocumentosComponent, ConsultarConductorComponent, Pantalla3DComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
