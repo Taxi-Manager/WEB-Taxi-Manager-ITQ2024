@@ -7,7 +7,7 @@
   </header>
   <div class="wrapper">
     <div class="title" id="c-title">
-      Lista de Conductores Designados
+      Lista de Conductores Registrados
     </div>
     <div class="table-responsive mt-2">
       <table class="table">
@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  <!-- Modal para subir documentos -->
+  <!-- Modal para"ver documentos -->
   <div class="cuadro-texto " *ngIf="verificacionDocumentosVisible">
     <div class="wrapper wrapper2">
       <button type="button" class="close" aria-label="Close" (click)="cerrarVerificacion()">
@@ -59,34 +59,28 @@
         <div class="form-group">
           <label for="titulo">Licencia de conducir para taxi vigente</label>
         </div>
-        <div class="subir" id="subirlicencia">
-          <label for="licencia">Subir Licencia (PDF):</label>
-          <input type="file" id="licencia" (change)="mostrarNombre($event)" accept="application/pdf" required>
-          <span class="nombre-archivo" id="licencia">{{ nombresArchivos['licencia'] }}</span>
+        <div class="ver" id="verlicencia">
+          <button (click)="verArchivo()">Ver Licencia</button>
         </div>
         <div class="form-group">
           <input type="checkbox" id="verificado1" [(ngModel)]="verificado1" name="verificado1">
           <label for="verificado">Licencia verificada </label>
         </div>
         <div class="form-group">
-          <label for="titulo">Identificación oficial (INE)</label>
+          <label for="titulo">Identificación Oficial (INE)</label>
         </div>
-        <div class="subir" id="subirine">
-          <label for="ine">Subir Licencia (PDF):</label>
-          <input type="file" id="ine" (change)="mostrarNombre($event)" accept="application/pdf" required>
-          <span class="nombre-archivo" id="ine">{{ nombresArchivos['ine'] }}</span>
+        <div class="ver" id="verine">
+          <button (click)="verArchivo()">Ver INE</button>
         </div>
         <div class="form-group">
           <input type="checkbox" id="verificado2" [(ngModel)]="verificado2" name="verificado2">
-          <label for="verificado">INE verificada </label>
+          <label for="verificado">INE verificado </label>
         </div>
         <div class="form-group">
-          <label for="titulo">Comprobante de domicilio (no mayor a 3 meses)</label>
+          <label for="titulo">Comprobante Domicilio (No mayor a tres meses)</label>
         </div>
-        <div class="subir" id="subircomprobante">
-          <label for="comprobante">Comprobante Domicilio (PDF):</label>
-          <input type="file" id="comprobante" (change)="mostrarNombre($event)" accept="application/pdf" required>
-          <span class="nombre-archivo" id="Comprobante">{{ nombresArchivos['comprobante'] }}</span>
+        <div class="ver" id="vercomprobante">
+          <button (click)="verArchivo()">Ver Comprobante Domicilio</button>
         </div>
         <div class="form-group">
           <input type="checkbox" id="verificado3" [(ngModel)]="verificado3" name="verificado3">

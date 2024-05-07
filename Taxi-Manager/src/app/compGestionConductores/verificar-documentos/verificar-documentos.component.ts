@@ -26,30 +26,19 @@ export class VerificarDocumentosComponent {
   }
 
   cargarDocumentos() {
-    if (!this.nombresArchivos['licencia'] || !this.nombresArchivos['ine'] || !this.nombresArchivos['comprobante']) {
-      alert('Por favor, seleccione un archivo PDF para cada campo antes de cargar los documentos.');
-      return;
-    }
-    else if (!this.verificado1 || !this.verificado2 || !this.verificado3) {
+   if (!this.verificado1 || !this.verificado2 || !this.verificado3) {
       alert('Por favor, verifique todos los documentos antes de cargarlos.');
       return;
     }
-  }
-
-  public nombresArchivos: { [id: string]: string } = {}; // Objeto para almacenar nombres de archivos (clave: ID, valor: nombre)
-
-  mostrarNombre(event: Event) {
-    const target = event.target as HTMLInputElement;
-    const files = target.files;
-    const inputId = target.id; // Obtener el ID del input
-
-    if (files && files.length > 0) {
-      const fileName = files[0].name;
-      this.nombresArchivos[inputId] = fileName; // Actualizar el objeto con el nombre del archivo y el ID del input
-    } else {
-      this.nombresArchivos[inputId] = ''; // Eliminar el nombre del archivo si no se seleccionó ninguno
+    else {
+      alert('Documentos cargados exitosamente.');
+      this.verificacionDocumentosVisible = false;
     }
   }
-
+  verArchivo() {
+    // Aquí puedes escribir la lógica para abrir una nueva ventana o pestaña del navegador
+    // que muestre el archivo PDF
+    window.open('/ruta/a/tu/archivo/licencia.pdf', '_blank');
+  }
 }
 

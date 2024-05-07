@@ -104,13 +104,13 @@ input[type="file"] {
 }
 
 /* Estilo para el contenedor del botón de carga de archivos */
-.subir {
+.ver {
   position: relative; /* Establecer la posición relativa para que el botón se pueda posicionar correctamente */
   overflow: hidden; /* Ocultar el contenido que se desborda del contenedor */
 }
 
 /* Estilo para el botón de carga de archivos */
-.subir label {
+.ver button {
   display: inline-block;
   background-color: #d0bd29; /* Color de fondo del botón */
   color: #ffffff; /* Color del texto del botón */
@@ -121,15 +121,10 @@ input[type="file"] {
 }
 
 /* Estilo para el botón de carga de archivos al pasar el cursor sobre él */
-.subir label:hover {
+.ver button:hover {
   background-color: #e6bc13; /* Cambiar el color de fondo al pasar el cursor */
 }
-.nombre-archivo {
-  font-size: 16px; /* Tamaño de fuente */
-  color: #333; /* Color de texto */
-  font-weight: bold; /* Peso de la fuente */
-  text-transform: uppercase; /* Convertir texto a mayúsculas */
-}
+
 
 /* Estilo personalizado para el checkbox */
 input[type="checkbox"] {
