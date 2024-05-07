@@ -1,11 +1,13 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ReportesComponent } from '../reportes/reportes.component';
+import { DashMainComponent } from '../dash-main/dash-main.component';
+import {RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReportesComponent, DashMainComponent, RouterModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })

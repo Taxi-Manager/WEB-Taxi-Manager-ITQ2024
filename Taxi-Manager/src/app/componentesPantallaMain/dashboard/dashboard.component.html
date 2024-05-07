@@ -7,8 +7,8 @@
 
 <div class="sidebar shadow p-2" id="sidebar" [ngStyle]="responsiveMenu">
     <ul>
-        <li><a href="#"><i class="bi bi-speedometer2"></i>Dashboard</a></li>
-        <li><a href="#"><i class="bi bi-flag-fill"></i>Reportes</a></li>
+        <li><a routerLink=""><i class="bi bi-speedometer2"></i>Dashboard</a></li>
+        <li><a routerLink="/Reportes"><i class="bi bi-flag-fill"></i>Reportes</a></li>
         
         <!--Esto se puede copiar y pegar para hacer mas submenus-->
         <li>
@@ -20,7 +20,7 @@
             </ul>
         </li>
         
-        <li><a href="#"><i class="bi bi-person-circle"></i>Conductores</a></li>
+        <li><a routerLink="/Conductores"><i class="bi bi-person-circle"></i>Conductores</a></li>
         <li><a href="#"><i class="bi bi-x-circle"></i>Cerrar sesion</a></li>
     </ul>
 </div>
@@ -30,7 +30,7 @@
 
 <!--Contenido Principal-->
 <div class="main-content">
-
+    <app-reportes></app-reportes>
 </div>
 
 <!--Contenido Principal-->
