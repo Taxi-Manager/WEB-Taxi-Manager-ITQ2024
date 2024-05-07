@@ -1,12 +1,15 @@
 <html>
+
 <body style="min-height: 100vh;">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <header class="container-fluid  mb-4">
+  <header class="container-fluid">
     <h1 class="text-center">Verificar Documentos del Conductor</h1>
   </header>
-  <div class="container mt-4 ">
-    <h2>Lista de Conductores Registrados</h2>
-    <div class="table-responsive mt-5">
+  <div class="wrapper">
+    <div class="title" id="c-title">
+      Lista de Conductores Designados
+    </div>
+    <div class="table-responsive mt-2">
       <table class="table">
         <thead>
           <tr>
@@ -36,6 +39,7 @@
             <td>Estado de Verificación: <strong>No verificado</strong></td>
             <td><button class="btn btn-primary" (click)="mostrarDocumentos()">Ver y Verificar Documentos</button></td>
           </tr>
+
           <!-- Más conductores en la lista -->
         </tbody>
       </table>
@@ -43,46 +47,57 @@
   </div>
 
   <!-- Modal para subir documentos -->
-  <div class="cuadro-texto grande" *ngIf="verificacionDocumentosVisible">
-    <button type="button" class="close" aria-label="Close" (click)="cerrarVerificacion()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-    <div class="container">
-      <h2 class="text-center">Verificar Documentos</h2>
+  <div class="cuadro-texto " *ngIf="verificacionDocumentosVisible">
+    <div class="wrapper wrapper2">
+      <button type="button" class="close" aria-label="Close" (click)="cerrarVerificacion()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="title" id="c-title">
+        Verificar Documentos
+      </div>
       <form>
         <div class="form-group">
-          <label for="licencia-conducir">Licencia de conducir para taxi vigente</label>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="licencia-conducir" accept="application/pdf">
-            <label class="custom-file-label" for="licencia-conducir">Seleccionar archivo</label>
-            <input type="checkbox" id="verificar-licencia" class="mt-3">
-            <label for="verificar-licencia">Verificar licencia</label>
-          </div>
+          <label for="titulo">Licencia de conducir para taxi vigente</label>
+        </div>
+        <div class="subir" id="subirlicencia">
+          <label for="licencia">Subir Licencia (PDF):</label>
+          <input type="file" id="licencia" (change)="mostrarNombre($event)" accept="application/pdf" required>
+          <span class="nombre-archivo" id="licencia">{{ nombresArchivos['licencia'] }}</span>
         </div>
         <div class="form-group">
-          <label for="identificacion-ine">Identificación oficial (INE)</label>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="identificacion-ine" accept="application/pdf">
-            <label class="custom-file-label" for="identificacion-ine">Seleccionar archivo</label>
-            <input type="checkbox" id="verificar-ine" class="mt-3">
-            <label for="verificar-ine">Verificar INE</label>
-          </div>
+          <input type="checkbox" id="verificado" name="verificado">
+          <label for="verificado">Licencia verificada </label>
         </div>
         <div class="form-group">
-          <label for="comprobante-domicilio">Comprobante de domicilio (no mayor a 3 meses)</label>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="comprobante-domicilio" accept="application/pdf">
-            <label class="custom-file-label" for="comprobante-domicilio">Seleccionar archivo</label>
-            <input type="checkbox" id="verificar-comprobante" class="mt-3">
-            <label for="verificar-comprobante">Verificar comprobante de domicilio</label>
-          </div>
+          <label for="titulo">Identificación oficial (INE)</label>
+        </div>
+        <div class="subir" id="subirine">
+          <label for="ine">Subir Licencia (PDF):</label>
+          <input type="file" id="ine" (change)="mostrarNombre($event)" accept="application/pdf" required>
+          <span class="nombre-archivo" id="ine">{{ nombresArchivos['ine'] }}</span>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="verificado" name="verificado">
+          <label for="verificado">INE verificada </label>
+        </div>
+        <div class="form-group">
+          <label for="titulo">Comprobante de domicilio (no mayor a 3 meses)</label>
+        </div>
+        <div class="subir" id="subircomprobante">
+          <label for="comprobante">Subir Licencia (PDF):</label>
+          <input type="file" id="comprobante" (change)="mostrarNombre($event)" accept="application/pdf" required>
+          <span class="nombre-archivo" id="Comprobante">{{ nombresArchivos['comprobante'] }}</span>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="verificado" name="verificado">
+          <label for="verificado">INE verificada </label>
         </div>
         <div class="form-group text-center"> <!-- Agregamos la clase text-center al contenedor del botón -->
           <button type="button" class="btn btn-primary" (click)="cargarDocumentos()">Cargar Documentos Verificados</button>
         </div>
-
       </form>
     </div>
   </div>
 </body>
+
 </html>
