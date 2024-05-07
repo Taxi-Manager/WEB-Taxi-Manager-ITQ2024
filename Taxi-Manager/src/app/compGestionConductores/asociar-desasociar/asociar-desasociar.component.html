@@ -1,1 +1,24 @@
-<p>asociar-desasociar works!</p>
+<div class="container">
+    <h1>Asociar / Desasociar conductor</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Conductores</h2>
+        <ul>
+          <li *ngFor="let conductor of conductores">
+            {{conductor.id}} - {{conductor.nombre}}
+            <button (click)="asociarConductor(conductor)" [disabled]="!conductor.disponible || conductor.asignado">Asociar</button>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h2>Vehículos</h2>
+        <ul>
+          <li *ngFor="let vehiculo of vehiculos">
+            {{vehiculo.id}} - {{vehiculo.modelo}}
+            <button (click)="asociarVehiculo(vehiculo)" [disabled]="!vehiculo.disponible || vehiculo.asignado">Asociar</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
