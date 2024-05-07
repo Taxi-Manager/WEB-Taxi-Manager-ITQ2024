@@ -58,7 +58,7 @@ export class Pantalla3DComponent  {
     );
 
     this.camera.attachControl(this.canvas, false);
-    this.camera.setPosition(new Vector3(0, 0, 100));
+    this.camera.setPosition(new Vector3(0, 0, 75));
 
     this.camera.wheelPrecision = 100;
     this.camera.minZ = 0.3;
@@ -74,8 +74,10 @@ export class Pantalla3DComponent  {
   CreateScene(): Scene {
     const scene2 = new Scene(this.engine);
     const scene = new Scene(this.engine);
+    
     const envTex = CubeTexture.CreateFromPrefilteredData(
       "./assets/images/sky.env",
+      //"./assets/images/fondo.png",
       scene
     );
 

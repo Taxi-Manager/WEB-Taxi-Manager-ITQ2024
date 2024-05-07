@@ -1,13 +1,13 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReportesComponent } from '../reportes/reportes.component';
-import { DashMainComponent } from '../dash-main/dash-main.component';
-import {RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { Pantalla3DComponent } from '../../componentes3D/pantalla3-d/pantalla3-d.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, ReportesComponent, DashMainComponent, RouterModule],
+  imports: [CommonModule, ReportesComponent, RouterModule, Pantalla3DComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
