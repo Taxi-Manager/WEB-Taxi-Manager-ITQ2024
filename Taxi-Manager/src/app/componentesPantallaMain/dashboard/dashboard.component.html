@@ -1,0 +1,36 @@
+<div class="topnav shadow p-1">
+    <a>Taxi Manager</a>
+    <span class="menu" (click)="openNav(true)"><i class="bi bi-list"></i></span>
+</div>
+
+<!--lado izquierdo navbar-->
+
+<div class="sidebar shadow p-2" id="sidebar" [ngStyle]="responsiveMenu">
+    <ul>
+        <li><a href="#"><i class="bi bi-speedometer2"></i>Dashboard</a></li>
+        <li><a href="#"><i class="bi bi-flag-fill"></i>Reportes</a></li>
+        
+        <!--Esto se puede copiar y pegar para hacer mas submenus-->
+        <li>
+            <a href="#"><i class="bi bi-taxi-front-fill"></i>Taxis<i class="bi bi-arrow-down"></i></a>
+            <ul class="dropdown-container">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+
+            </ul>
+        </li>
+        
+        <li><a href="#"><i class="bi bi-person-circle"></i>Conductores</a></li>
+        <li><a href="#"><i class="bi bi-x-circle"></i>Cerrar sesion</a></li>
+    </ul>
+</div>
+
+<!--lado izquierdo navbar-->
+
+
+<!--Contenido Principal-->
+<div class="main-content">
+
+</div>
+
+<!--Contenido Principal-->
