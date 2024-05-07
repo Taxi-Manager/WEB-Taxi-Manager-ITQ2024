@@ -1,28 +1,53 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Subir Documentos del Conductor</title>
-</head>
-<body>
-  <header>
-    <h1>Subir Documentos del Conductor</h1>
+<body style="min-height: 100vh;">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <header class="container-fluid">
+    <h1 class="text-center">Subir Documentos del Conductor</h1>
   </header>
-  <main>
-    <section id="subida-documentos">
-      <h1>Datos del Conductor</h1>
-      <h2>Subir Documentos</h2>
-      <form enctype="multipart/form-data">
-        <label for="licencia-conducir">Licencia de conducir para taxi (PDF):</label>
-        <input type="file" id="licencia-conducir" accept=".pdf" required>
-        <label for="identificacion-ine">Identificación oficial (INE) (PDF):</label>
-        <input type="file" id="identificacion-ine" accept=".pdf" required>
-        <label for="comprobante-domicilio">Comprobante de domicilio (PDF, no mayor a 3 meses):</label>
-        <input type="file" id="comprobante-domicilio" accept=".pdf" required>
-        <button onclick="validarDocumentos()">Subir Documentos</button>
-      </form>
-    </section>
-  </main>
+<div class="wrapper">
+  <div class="title" id="c-title">
+    Subir Documentos
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="titulo">Licencia de conducir para taxi vigente</label>
+    </div>
+    <div class="subir" id="subirlicencia">
+      <label for="licencia">Licencia de Conducir (PDF):</label>
+      <input type="file" id="licencia" (change)="mostrarNombre($event)" accept="application/pdf" required>
+      <span class="nombre-archivo" id="licencia">{{ nombresArchivos['licencia'] }}</span>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="verificado1" [(ngModel)]="verificado1" name="verificado1">
+      <label for="verificado">Licencia verificada </label>
+    </div>
+    <div class="form-group">
+      <label for="titulo">Identificación oficial (INE)</label>
+    </div>
+    <div class="subir" id="subirine">
+      <label for="ine">INE (PDF):</label>
+      <input type="file" id="ine" (change)="mostrarNombre($event)" accept="application/pdf" required>
+      <span class="nombre-archivo" id="ine">{{ nombresArchivos['ine'] }}</span>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="verificado2" [(ngModel)]="verificado2" name="verificado2">
+      <label for="verificado">INE verificada </label>
+    </div>
+    <div class="form-group">
+      <label for="titulo">Comprobante de domicilio (no mayor a 3 meses)</label>
+    </div>
+    <div class="subir" id="subircomprobante">
+      <label for="comprobante">Comprobante Domicilio (PDF):</label>
+      <input type="file" id="comprobante" (change)="mostrarNombre($event)" accept="application/pdf" required>
+      <span class="nombre-archivo" id="Comprobante">{{ nombresArchivos['comprobante'] }}</span>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="verificado3" [(ngModel)]="verificado3" name="verificado3">
+      <label for="verificado">Comprobante Domicilio verificado </label>
+    </div>
+    <div class="form-group text-center"> <!-- Agregamos la clase text-center al contenedor del botón -->
+      <button type="button" class="btn btn-primary" (click)="cargarDocumentos()">Cargar Documentos
+        Verificados</button>
+    </div>
+  </form>
+</div>
 </body>
-</html>
