@@ -112,8 +112,8 @@ input[type="file"] {
 /* Estilo para el botón de carga de archivos */
 .subir label {
   display: inline-block;
-  background-color: #f1da63; /* Color de fondo del botón */
-  color: #fff; /* Color del texto del botón */
+  background-color: #d0bd29; /* Color de fondo del botón */
+  color: #ffffff; /* Color del texto del botón */
   padding: 10px 20px; /* Espaciado interno del botón */
   border-radius: 5px; /* Borde redondeado del botón */
   cursor: pointer; /* Cambiar el cursor a una mano al pasar sobre el botón */
@@ -122,7 +122,7 @@ input[type="file"] {
 
 /* Estilo para el botón de carga de archivos al pasar el cursor sobre él */
 .subir label:hover {
-  background-color: #d6d013; /* Cambiar el color de fondo al pasar el cursor */
+  background-color: #e6bc13; /* Cambiar el color de fondo al pasar el cursor */
 }
 .nombre-archivo {
   font-size: 16px; /* Tamaño de fuente */

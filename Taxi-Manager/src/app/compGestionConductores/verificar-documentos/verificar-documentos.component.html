@@ -65,7 +65,7 @@
           <span class="nombre-archivo" id="licencia">{{ nombresArchivos['licencia'] }}</span>
         </div>
         <div class="form-group">
-          <input type="checkbox" id="verificado" name="verificado">
+          <input type="checkbox" id="verificado1" [(ngModel)]="verificado1" name="verificado1">
           <label for="verificado">Licencia verificada </label>
         </div>
         <div class="form-group">
@@ -77,23 +77,24 @@
           <span class="nombre-archivo" id="ine">{{ nombresArchivos['ine'] }}</span>
         </div>
         <div class="form-group">
-          <input type="checkbox" id="verificado" name="verificado">
+          <input type="checkbox" id="verificado2" [(ngModel)]="verificado2" name="verificado2">
           <label for="verificado">INE verificada </label>
         </div>
         <div class="form-group">
           <label for="titulo">Comprobante de domicilio (no mayor a 3 meses)</label>
         </div>
         <div class="subir" id="subircomprobante">
-          <label for="comprobante">Subir Licencia (PDF):</label>
+          <label for="comprobante">Comprobante Domicilio (PDF):</label>
           <input type="file" id="comprobante" (change)="mostrarNombre($event)" accept="application/pdf" required>
           <span class="nombre-archivo" id="Comprobante">{{ nombresArchivos['comprobante'] }}</span>
         </div>
         <div class="form-group">
-          <input type="checkbox" id="verificado" name="verificado">
-          <label for="verificado">INE verificada </label>
+          <input type="checkbox" id="verificado3" [(ngModel)]="verificado3" name="verificado3">
+          <label for="verificado">Comprobante Domicilio verificado </label>
         </div>
         <div class="form-group text-center"> <!-- Agregamos la clase text-center al contenedor del botón -->
-          <button type="button" class="btn btn-primary" (click)="cargarDocumentos()">Cargar Documentos Verificados</button>
+          <button type="button" class="btn btn-primary" (click)="cargarDocumentos()">Cargar Documentos
+            Verificados</button>
         </div>
       </form>
     </div>
