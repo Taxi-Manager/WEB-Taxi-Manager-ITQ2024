@@ -1,1 +1,81 @@
-<p>acesso-funcion-registro works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Vehículo</title>
+  <link rel="stylesheet" href="acesso-funcion-registro.component.css"> 
+</head>
+<body>
+  <div class="container">
+    <h1>Registro de Vehículo</h1>
+    <!-- <img src="logo" class="d-block w-100" alt="Logo"> -->
+    <form id="registro-form">
+      <div class="form-group">
+        <label for="placa">Placa del vehículo:</label>
+        <input type="text" id="placa" name="placa" required>
+      </div>
+      <div class="form-group">
+        <label for="modelo">Modelo del vehículo:</label>
+        <input type="text" id="modelo" name="modelo" required>
+      </div>
+      <div class="form-group">
+        <label for="numeroSerie">Número de serie del motor:</label>
+        <input type="text" id="numeroSerie" name="numeroSerie" required>
+      </div>
+      <div class="form-group">
+        <label for="numeroChasis">Número de chasis:</label>
+        <input type="text" id="numeroChasis" name="numeroChasis" required>
+      </div>
+      <div class="form-group">
+        <label for="tarjetaCirculacion">Tarjeta de circulación:</label>
+        <input type="file" id="tarjetaCirculacion" name="tarjetaCirculacion">
+      </div>
+      <div class="form-group">
+        <label for="polizaSeguro">Póliza de seguro:</label>
+        <input type="file" id="polizaSeguro" name="polizaSeguro">
+      </div>
+      <div class="form-group">
+        <label for="historialTenencias">Historial de tenencias vigentes:</label>
+        <input type="file" id="historialTenencias" name="historialTenencias">
+      </div>
+      <div class="form-group">
+        <label for="otrosDocumentos">Otros documentos relevantes:</label>
+        <input type="file" id="otrosDocumentos" name="otrosDocumentos">
+      </div>
+      <button type="submit" id="submit-btn" 
+      onclick="mostrarAlerta('alert')">
+      Registrar Vehículo</button>
+
+      <div id="registro-id" style="display: none;"></div> <!-- Aquí se mostrará el ID único generado -->
+      <button type="submit" onclick="alert(alerta);">
+        No presionar
+        </button>
+    </form>
+  </div>
+
+  <script>
+    function mostrarAlerta() {
+      // Generar un ID único utilizando la función hash SHA-256
+      const registroForm = document.getElementById("registro-form");
+      const placa = registroForm.elements["placa"].value;
+      const modelo = registroForm.elements["modelo"].value;
+      const numeroSerie = registroForm.elements["numeroSerie"].value;
+      const numeroChasis = registroForm.elements["numeroChasis"].value;
+      const registroData = placa + modelo + numeroSerie + numeroChasis;
+      const registroId = sha256(registroData);
+
+      // Mostrar el ID único generado en el div
+      const registroIdDiv = document.getElementById("registro-id");
+      registroIdDiv.textContent = registroId;
+      registroIdDiv.style.display = "block";
+
+      // Mostrar la alerta
+      alert("El vehículo se registró correctamente. ID del registro: " + registroId);
+    }
+
+    // Función hash SHA-256
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* Estilos de la página */
+body, * {
+  font-family: Arial, sans-serif;
+  margin: 0; /* Elimina el margen */
+  padding: 0;
+}
+
+body {
+  /*background-color: #fbb03b;*/
+  /* Utilizamos un gradiente lineal con los colores de un taxi */
+  background: linear-gradient(45deg, #fbb03b, #000000, #fbb03b);
+  background-size: 200% 200%; /* Tamaño del gradiente */
+  animation: gradient-animation 10s infinite; /* Animación del gradiente */
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fbb13ba1;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(127, 188, 36, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #3b5bfb00;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff39;
+  color: #0bf85abe;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+button[type="submit"]:before {
+  content: "";
+  position: absolute;
+  background-color: rgba(8, 76, 202, 0);
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+}
+
+button[type="submit"]:hover:before {
+  transform: scale(2);
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; /* Inicio del gradiente */
+  }
+  50% {
+    background-position: 100% 50%; /* Mitad del gradiente */
+  }
+  100% {
+    background-position: 0% 50%; /* Fin del gradiente */
+  }
+}
+#numeroChasis {
+  background-color: #8275247d; /* Cambia el color de fondo al amarillo (#fbb03b) */
+}
+#placa {
+  background-color: #8275247d;
+}
+#modelo{
+  background-color: #8275247d;
+}
+#numeroSerie{
+  background-color: #8275247d;
+}
+.notification {
+  background-color: #5cb85c;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px; /* Espaciado superior */
+}
+
+.hidden {
+  display: none;
+}
+.registro-id {
+  display: none;
+}
