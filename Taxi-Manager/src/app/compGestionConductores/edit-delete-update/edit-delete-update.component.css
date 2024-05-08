@@ -1,88 +1,116 @@
-/* styles.css */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
-/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
+  display: grid;
+  place-items: center;
+  background: #bfcdda;
+
 }
 
-h1, h2 {
-    text-align: center;
+.wrapper {
+  width: 700px;
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.7s ease;
 }
 
-section {
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.wrapper:hover {
+  transform: scale(1.03);
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.wrapper .title {
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 40px 40px 0 0;
+  background: linear-gradient(-135deg, #f0a418, #facb4b);
+  transition: all 1s ease;
+
 }
 
-li {
-    margin-bottom: 10px;
+.wrapper:hover .title {
+  font-size: 37px;
 }
 
-/* Estilos para el formulario de edición de conductor */
-#driverFormSection {
-    max-width: 600px;
-    margin: 0 auto;
+.wrapper .documento {
+  padding: 10px 30px 50px 30px;
 }
 
-#driverFormSection form {
-    display: flex;
-    flex-direction: column;
-}
-
-#driverFormSection form div {
-    margin-bottom: 15px;
-}
-
-label {
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="tel"],
-input[type="file"] {
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
+button  {
+  color: #dbc276;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #f5eede;
+  border: 1.5px;
+  border-style: solid;
+  border-color: #f8c86a;
+  transition: all 0.2s ease;
+  margin-left: 10px;
 }
 
 button:hover {
-    background-color: #0056b3;
+  transform: scale(1.02);
+  background: linear-gradient(-135deg, #f8c86a, #f0a418);
+  color: white;
+
 }
 
-/* Estilos para la lista de conductores */
-#driverList {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 0;
+button:active {
+  transform: scale(0.95);
+}
+.btn-guardar-actualizacion{
+  background-color: rgb(246, 236, 98);
 }
 
-#driverList li {
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 4px;
+
+/* Estilo personalizado para el campo de carga de archivos */
+input[type="file"] {
+  opacity: 0; /* Ocultar el campo de carga de archivos */
+  position: absolute; /* Posicionar el campo de carga de archivos fuera del flujo del documento */
+  width: 0;
+  height: 0;
 }
 
-#driverList li:hover {
-    background-color: #eaeaea;
+/* Estilo para el contenedor del botón de carga de archivos */
+.subir {
+  position: relative; /* Establecer la posición relativa para que el botón se pueda posicionar correctamente */
+  overflow: hidden; /* Ocultar el contenido que se desborda del contenedor */
 }
+
+/* Estilo para el botón de carga de archivos */
+.subir label {
+  display: inline-block;
+  background-color: #f1da63; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  border-radius: 5px; /* Borde redondeado del botón */
+  cursor: pointer; /* Cambiar el cursor a una mano al pasar sobre el botón */
+  transition: background-color 0.3s ease; /* Agregar una transición de color de fondo */
+}
+
+/* Estilo para el botón de carga de archivos al pasar el cursor sobre él */
+.subir label:hover {
+  background-color: #d6d013; /* Cambiar el color de fondo al pasar el cursor */
+}
+.nombre-archivo {
+  font-size: 16px; /* Tamaño de fuente */
+  color: #333; /* Color de texto */
+  font-weight: bold; /* Peso de la fuente */
+  text-transform: uppercase; /* Convertir texto a mayúsculas */
+}
+
+

@@ -1,57 +1,73 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Conductores - Taxi Manager</title>
+<body style="min-height: 100vh;">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <header class="container-fluid">
+    <h1 class="text-center">Actualizar Documentos del Conductor</h1>
+  </header>
+<div class="wrapper">
+  <div class="title" id="c-title">
+    Actualizar Documentos
+  </div>
+  <!-- Licencia de conducir -->
+  <div class="documento">
+    <label for="licencia">Licencia de conducir Existente:</label>
+    <span class="nombre-archivo">{{ nombreArchivoLicencia }}</span>
+    <div class="botones-accion">
+      <button *ngIf="mostrarBotonReemplazarLicencia" type="button" class="btn-reemplazar" (click)="reemplazarDocumento('licencia')">Reemplazar Archivo</button>
+      <button *ngIf="mostrarBotonConservarLicencia" class="btn-accion" (click)="conservarDocumento('licencia')">Conservar</button>
+      <button *ngIf="mostrarBotonCancelarLicencia" class="btn-accion" (click)="cancelar('licencia')">Cancelar</button>
+    </div>
+    <div class="subir"*ngIf="mostrarSubirArchivoLicencia">
+      <label for="nuevoDocumentoLicencia">Subir Nuevo Documento:</label>
+      <input type="file" id="nuevoDocumentoLicencia" (change)="subirArchivo($event, 'licencia')" accept=".pdf">
+      <span class="nombre-archivo" id="licencia" *ngIf="mostrarNombreArchivoLicencia">{{ archivoSeleccionado?.name }}</span>
+      <div class="botones-accion">
+        <button class="btn-accion" (click)="guardarCambios('licencia')">Guardar Cambios</button>
+        <button class="btn-accion" (click)="cancelar('licencia')">Cancelar</button>
+      </div>
+    </div>
+  </div>
 
-</head>
-<body>
-    <h1>Gestión de Conductores</h1>
+  <!-- INE -->
+  <div class="documento">
+    <label for="ine">INE Existente:</label>
+    <span class="nombre-archivo">{{ nombreArchivoINE }}</span>
+    <div class="botones-accion">
+      <button *ngIf="mostrarBotonReemplazarINE" type="button" class="btn-reemplazar" (click)="reemplazarDocumento('ine')">Reemplazar Archivo</button>
+      <button *ngIf="mostrarBotonConservarINE" class="btn-accion" (click)="conservarDocumento('ine')">Conservar</button>
+      <button *ngIf="mostrarBotonCancelarINE" class="btn-accion" (click)="cancelar('ine')">Cancelar</button>
+    </div>
+    <div class="subir"*ngIf="mostrarSubirArchivoINE">
+      <label for="nuevoDocumentoINE">Subir Nuevo Documento:</label>
+      <input type="file" id="nuevoDocumentoINE" (change)="subirArchivo($event, 'ine')" accept=".pdf">
+      <span class="nombre-archivo" id="ine" *ngIf="mostrarNombreArchivoINE">{{ archivoSeleccionado?.name }}</span>
+      <div class="botones-accion">
+        <button class="btn-accion" (click)="guardarCambios('ine')">Guardar Cambios</button>
+        <button class="btn-accion" (click)="cancelar('ine')">Cancelar</button>
+      </div>
+    </div>
+  </div>
 
-    <!-- Sección de Lista de Conductores -->
-    <section>
-        <h2>Lista de Conductores</h2>
-        <ul id="driverList">
-            <!-- Aquí se cargarán dinámicamente los conductores desde JavaScript -->
-        </ul>
-    </section>
-
-    <!-- Sección de Formulario de Edición de Conductor -->
-    <section id="driverFormSection" style="display: block;">
-        <h2>Editar Conductor</h2>
-        <form id="driverForm">
-            <div>
-                <label for="nombreCompleto">Nombre Completo:</label>
-                <input type="text" id="nombreCompleto" name="nombreCompleto" required>
-            </div>
-            <div>
-                <label for="domicilio">Domicilio:</label>
-                <input type="text" id="domicilio" name="domicilio" required>
-            </div>
-            <div>
-                <label for="telefono">Número Telefónico:</label>
-                <input type="tel" id="telefono" name="telefono" required>
-            </div>
-            <div>
-                <label for="licencia">Licencia de Conducir:</label>
-                <input type="file" id="licencia" name="licencia" accept=".pdf,.jpg,.png">
-            </div>
-            <div>
-                <label for="identificacion">Identificación Oficial:</label>
-                <input type="file" id="identificacion" name="identificacion" accept=".pdf,.jpg,.png">
-            </div>
-            <div>
-                <label for="comprobanteDomicilio">Comprobante de Domicilio:</label>
-                <input type="file" id="comprobanteDomicilio" name="comprobanteDomicilio" accept=".pdf,.jpg,.png">
-            </div>
-            <div>
-                <button type="button" id="saveButton">Guardar Cambios</button>
-                <button type="button" id="cancelButton">Cancelar</button>
-            </div>
-        </form>
-    </section>
-
-
+  <!-- Comprobante de domicilio -->
+  <div class="documento">
+    <label for="comprobante">Comprobante de Domicilio Existente:</label>
+    <span class="nombre-archivo">{{ nombreArchivoComprobante }}</span>
+    <div class="botones-accion">
+      <button *ngIf="mostrarBotonReemplazarComprobante" type="button" class="btn-reemplazar" (click)="reemplazarDocumento('comprobante')">Reemplazar Archivo</button>
+      <button *ngIf="mostrarBotonConservarComprobante" class="btn-accion" (click)="conservarDocumento('comprobante')">Conservar</button>
+      <button *ngIf="mostrarBotonCancelarComprobante" class="btn-accion" (click)="cancelar('comprobante')">Cancelar</button>
+    </div>
+    <div class="subir"*ngIf="mostrarSubirArchivoComprobante">
+      <label for="nuevoDocumentoComprobante">Subir Nuevo Documento:</label>
+      <input type="file" id="nuevoDocumentoComprobante" (change)="subirArchivo($event, 'comprobante')" accept=".pdf">
+      <span class="nombre-archivo" id="comprobante" *ngIf="mostrarNombreArchivoComprobante">{{ archivoSeleccionado?.name }}</span>
+      <div class="botones-accion">
+        <button class="btn-accion" (click)="guardarCambios('comprobante')">Guardar Cambios</button>
+        <button class="btn-accion" (click)="cancelar('comprobante')">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <div class="form-group text-center">
+    <button class="btn-guardar-actualizacion" (click)="guardarActualizacion()">Guardar Actualización</button>
+  </div>
+</div>
 </body>
-</html>

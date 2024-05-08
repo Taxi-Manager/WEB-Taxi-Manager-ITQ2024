@@ -12,7 +12,7 @@
       <label for="titulo">Licencia de conducir para taxi vigente</label>
     </div>
     <div class="subir" id="subirlicencia">
-      <label for="licencia">Licencia de Conducir (PDF):</label>
+      <label for="licencia">Subir Licencia de Conducir (PDF):</label>
       <input type="file" id="licencia" (change)="mostrarNombre($event)" accept="application/pdf" required>
       <span class="nombre-archivo" id="licencia">{{ nombresArchivos['licencia'] }}</span>
     </div>
@@ -24,7 +24,7 @@
       <label for="titulo">Identificación oficial (INE)</label>
     </div>
     <div class="subir" id="subirine">
-      <label for="ine">INE (PDF):</label>
+      <label for="ine">Subir INE (PDF):</label>
       <input type="file" id="ine" (change)="mostrarNombre($event)" accept="application/pdf" required>
       <span class="nombre-archivo" id="ine">{{ nombresArchivos['ine'] }}</span>
     </div>
@@ -36,7 +36,7 @@
       <label for="titulo">Comprobante de domicilio (no mayor a 3 meses)</label>
     </div>
     <div class="subir" id="subircomprobante">
-      <label for="comprobante">Comprobante Domicilio (PDF):</label>
+      <label for="comprobante"> Subir Comprobante Domicilio (PDF):</label>
       <input type="file" id="comprobante" (change)="mostrarNombre($event)" accept="application/pdf" required>
       <span class="nombre-archivo" id="Comprobante">{{ nombresArchivos['comprobante'] }}</span>
     </div>
@@ -45,8 +45,7 @@
       <label for="verificado">Comprobante Domicilio verificado </label>
     </div>
     <div class="form-group text-center"> <!-- Agregamos la clase text-center al contenedor del botón -->
-      <button type="button" class="btn btn-primary" (click)="cargarDocumentos()">Cargar Documentos
-        Verificados</button>
+      <button type="button" class="btn btn-primary" (click)="cargarDocumentos()">Registrar Conductor</button>
     </div>
   </form>
 </div>
