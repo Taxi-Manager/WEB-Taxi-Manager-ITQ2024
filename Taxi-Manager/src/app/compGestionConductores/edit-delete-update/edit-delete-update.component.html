@@ -1,57 +1,97 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="taxiManagerApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Conductores - Taxi Manager</title>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
-<body>
+<body ng-controller="MainController as mainCtrl">
     <h1>Gestión de Conductores</h1>
 
     <!-- Sección de Lista de Conductores -->
     <section>
         <h2>Lista de Conductores</h2>
-        <ul id="driverList">
-            <!-- Aquí se cargarán dinámicamente los conductores desde JavaScript -->
+        <ul>
+            <li ng-repeat="conductor in mainCtrl.conductores" ng-click="mainCtrl.mostrarFormularioEdicion($index)">
+            <!--  {{ conductor.nombre }}-->  
+            </li>
         </ul>
     </section>
 
     <!-- Sección de Formulario de Edición de Conductor -->
-    <section id="driverFormSection" style="display: none;">
+    <section ng-show="mainCtrl.mostrarFormulario">
         <h2>Editar Conductor</h2>
-        <form id="driverForm">
+        <form>
             <div>
                 <label for="nombreCompleto">Nombre Completo:</label>
-                <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+                <input type="text" id="nombreCompleto" ng-model="mainCtrl.conductorSeleccionado.nombre" required>
             </div>
             <div>
                 <label for="domicilio">Domicilio:</label>
-                <input type="text" id="domicilio" name="domicilio" required>
+                <input type="text" id="domicilio" ng-model="mainCtrl.conductorSeleccionado.domicilio" required>
             </div>
             <div>
                 <label for="telefono">Número Telefónico:</label>
-                <input type="tel" id="telefono" name="telefono" required>
+                <input type="tel" id="telefono" ng-model="mainCtrl.conductorSeleccionado.telefono" required>
             </div>
             <div>
                 <label for="licencia">Licencia de Conducir:</label>
-                <input type="file" id="licencia" name="licencia" accept=".pdf,.jpg,.png">
+                <input type="file" id="licencia" accept=".pdf,.jpg,.png">
             </div>
             <div>
                 <label for="identificacion">Identificación Oficial:</label>
-                <input type="file" id="identificacion" name="identificacion" accept=".pdf,.jpg,.png">
+                <input type="file" id="identificacion" accept=".pdf,.jpg,.png">
             </div>
             <div>
                 <label for="comprobanteDomicilio">Comprobante de Domicilio:</label>
-                <input type="file" id="comprobanteDomicilio" name="comprobanteDomicilio" accept=".pdf,.jpg,.png">
+                <input type="file" id="comprobanteDomicilio" accept=".pdf,.jpg,.png">
             </div>
             <div>
-                <button type="button" id="saveButton">Guardar Cambios</button>
-                <button type="button" id="cancelButton">Cancelar</button>
+                <button type="button" ng-click="mainCtrl.guardarCambios()">Guardar Cambios</button>
+                <button type="button" ng-click="mainCtrl.cancelar()">Cancelar</button>
             </div>
         </form>
     </section>
+    <section>
+        <h2>eliminar conductor</h2>
+        <ul>
+            <form>
+                <div>
+                    <label for="nombreCompleto">Nombre Completo:</label>
+                    <input type="text" id="nombreCompleto" ng-model="mainCtrl.conductorSeleccionado.nombre" required>
+                </div>
+                <div>
+                    <button type="button" ng-click="mainCtrl.borrar()">Borrar</button>
+                </div>
+            </form>
+        </ul>
+    </section>
+    <script>
+        angular.module("taxiManagerApp", [])
+        .controller("MainController", function() {
+            var vm = this;
+            vm.conductores = [
+                { nombre: "Juan Pérez", domicilio: "Calle 123", telefono: "555-1234" },
+                { nombre: "María González", domicilio: "Avenida XYZ", telefono: "555-5678" }
+            ];
+            vm.mostrarFormulario = false;
+            vm.conductorSeleccionado = {};
 
-    
+            vm.mostrarFormularioEdicion = function(index) {
+                vm.conductorSeleccionado = angular.copy(vm.conductores[index]);
+                vm.mostrarFormulario = true;
+            };
+
+            vm.guardarCambios = function() {
+                // Aquí puedes implementar la lógica para guardar los cambios en el conductor seleccionado
+                vm.mostrarFormulario = false;
+            };
+
+            vm.cancelar = function() {
+                vm.mostrarFormulario = false;
+            };
+        });
+    </script>
 </body>
 </html>
