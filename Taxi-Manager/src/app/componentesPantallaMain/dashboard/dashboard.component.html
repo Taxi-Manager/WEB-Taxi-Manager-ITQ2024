@@ -1,13 +1,14 @@
 <div class="topnav shadow p-1">
     <a>Taxi Manager</a>
     <span class="menu" (click)="openNav(true)"><i class="bi bi-list"></i></span>
+    <a class="l-status">A</a>
 </div>
 
 <!--lado izquierdo navbar-->
 
 <div class="sidebar shadow p-2" id="sidebar" [ngStyle]="responsiveMenu">
     <ul>
-        <li><a routerLink=""><i class="bi bi-speedometer2"></i>Dashboard</a></li>
+        <li><a style="color: #f4c659;"><i class="bi bi-speedometer2"></i>Dashboard</a></li>
         <li><a routerLink="/Reportes"><i class="bi bi-flag-fill"></i>Reportes</a></li>
         
         <!--Esto se puede copiar y pegar para hacer mas submenus-->
@@ -21,7 +22,7 @@
         </li>
         
         <li><a routerLink="/Conductores"><i class="bi bi-person-circle"></i>Conductores</a></li>
-        <li><a href="#"><i class="bi bi-x-circle"></i>Cerrar sesion</a></li>
+        <li ><a  href="#" class="cerrar"><i class="bi bi-x-circle"></i>Cerrar sesion</a></li>
     </ul>
 </div>
 
