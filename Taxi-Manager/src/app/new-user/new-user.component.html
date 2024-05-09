@@ -1,15 +1,17 @@
 <div class="btn">
    <label class="btn-t">NUEVO USUARIO</label>
-   <form id="r-form">
-      <input id="nuser" type="text" required>
-      <label class="label" > Usuario </label>
-      <input id="pass-1" type="password" required>
-      <label class="label" > Contraseña </label>
-      <input id="pass-2" type="password" required>
-      <label class="label" > Confirmar contraseña </label>
+   <form>
+      <input type="text" required>
+      <label class="label" id="nuser"> Usuario </label>
+      <input type="password" required>
+      <label class="label" id="pass-1"> Contraseña </label>
+      <input type="password" required>
+      <label class="label" id="pass-2"> Confirmar contraseña </label>
+      <input class="privi" type="checkbox" name="vehicle1" value="Bike"><p class="superu">Super administrador</p> 
       <input type="submit" value="Crear usuario">
    </form>
 </div>
+
 <script>
    document.addEventListener('DOMContentLoaded', () => {
      crearuser();

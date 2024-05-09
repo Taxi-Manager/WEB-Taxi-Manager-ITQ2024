@@ -123,3 +123,35 @@ input[type="submit"]:active{
      transform: scale(0.95);
 
 }
+
+.privi{
+  height: 20px;
+ width: 50%;
+  position:relative;
+  left: -38%;
+  
+}
+.superu{
+  color: gray;
+    font-family: 'Poppins', sans-serif;
+  position:absolute;
+  top: 73%;
+  left: 25%;
+  transition: all 0.5s ease;
+}
+input[type="checkbox"]:valid + .superu{
+ transform: scale(1);
+  font-weight: bold; 
+  color: #FCB240;
+}
+input[type="checkbox"]:not(:checked){
+ transform: scale(0.8);
+  
+}
+input[type="checkbox"]:not(:checked) + .superu {
+ transform: scale(0.9);
+  color: gray;
+     font-weight: normal; 
+
+  left: 18%;
+}
