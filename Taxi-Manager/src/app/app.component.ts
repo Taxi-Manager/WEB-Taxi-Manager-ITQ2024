@@ -6,13 +6,14 @@ import {VerificarDocumentosComponent} from './compGestionConductores/verificar-d
 import { SubirDocumentosComponent } from './compGestionConductores/subir-documentos/subir-documentos.component';
 import { ConsultarConductorComponent } from './compGestionConductores/consultar-conductor/consultar-conductor.component';
 import { Pantalla3DComponent } from './componentes3D/pantalla3-d/pantalla3-d.component';
-import { DashboardComponent } from './componentesPantallaMain/dashboard/dashboard.component'
+import { DashboardComponent } from './componentesPantallaMain/dashboard/dashboard.component';
+import { GarajeComponent } from './componentesGaraje/garaje/garaje.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,CrearConductorComponent,EditDeleteUpdateComponent, VerificarDocumentosComponent,
-    SubirDocumentosComponent, ConsultarConductorComponent, Pantalla3DComponent, DashboardComponent
+    SubirDocumentosComponent, ConsultarConductorComponent, Pantalla3DComponent, DashboardComponent, GarajeComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
