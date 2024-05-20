@@ -1,0 +1,14 @@
+/* programar-mantenimiento.component.css */
+
+.container {
+  margin: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  height: 25px;
+  background-color: #b4d0ee;
+}
