@@ -54,6 +54,11 @@ export class ProgramarMantenimientoComponent implements OnInit {
     // Calculamos la diferencia en días entre hoy y la fecha de mantenimiento
     const diasRestantes = Math.ceil((fechaMantenimiento.getTime() - hoy.getTime()) / (1000 * 60 * 60 * 24));
 
+    // Enviamos notificación cuando falten 80, 85 y 90 días para el próximo mantenimiento
+    if (diasRestantes === 80 || diasRestantes === 85 || diasRestantes === 90) {
+      this.enviarNotificacion(`Faltan ${diasRestantes} días para el próximo mantenimiento`);
+  }
+
     // Si la fecha de mantenimiento es hoy o en el pasado, la barra se llenará gradualmente hasta llegar a 90 días
     if (diasRestantes <= 0) {
         return Math.min((-diasRestantes / 90) * 100, 100);
@@ -68,10 +73,8 @@ export class ProgramarMantenimientoComponent implements OnInit {
     return 0;
 }
 
-
-
-
-
-
-
+enviarNotificacion(mensaje: string) {
+  // Lógica para enviar la notificación, por ejemplo, mediante un servicio de notificaciones
+  console.log('Notificación enviada:', mensaje);
+}
 }
