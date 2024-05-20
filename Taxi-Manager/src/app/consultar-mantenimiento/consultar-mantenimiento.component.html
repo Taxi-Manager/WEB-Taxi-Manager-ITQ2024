@@ -1,1 +1,47 @@
-<p>consultar-mantenimiento works!</p>
+<div class="container">
+  <h2>Historial de Mantenimiento</h2>
+  <form (ngSubmit)="buscarHistorial()" #buscarForm="ngForm">
+    <div class="form-group">
+      <label for="identificador">Buscar por Identificador Único (TZ):</label>
+      <input type="text" id="identificador" name="identificador" [(ngModel)]="identificador" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!buscarForm.form.valid">Buscar</button>
+  </form>
+
+  <div *ngIf="busquedaRealizada">
+    <hr>
+    <div class="form-group">
+      <label for="mes">Filtrar por Mes:</label>
+      <select id="mes" name="mes" [(ngModel)]="mesSeleccionado" class="form-control" (ngModelChange)="filtrarPorMes()">
+        <option value="0">Todos</option>
+        <option value="1">Enero</option>
+        <option value="2">Febrero</option>
+        <option value="3">Marzo</option>
+        <option value="4">Abril</option>
+        <option value="5">Mayo</option>
+        <option value="6">Junio</option>
+        <option value="7">Julio</option>
+        <option value="8">Agosto</option>
+        <option value="9">Septiembre</option>
+        <option value="10">Octubre</option>
+        <option value="11">Noviembre</option>
+        <option value="12">Diciembre</option>
+      </select>
+    </div>
+    <hr>
+  </div>
+
+  <div *ngIf="historialFiltrado.length > 0">
+    <h3>Historial de Mantenimiento para el Vehículo {{ identificador }}</h3>
+    <div *ngFor="let servicio of historialFiltrado">
+      <h4>Fecha: {{ servicio.fecha }}</h4>
+      <p>Tipo de Servicio: {{ servicio.tipo }}</p>
+      <p>Kilometraje: {{ servicio.kilometraje }}</p>
+      <p>Observaciones: {{ servicio.observaciones }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="historialFiltrado.length === 0 && historialCargado && mesSeleccionado !== 0">
+    <p>No se encontraron registros de mantenimiento para el vehículo {{ identificador }} en el mes seleccionado.</p>
+  </div>
+</div>
