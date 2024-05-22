@@ -79,15 +79,23 @@ export class Pantalla3DComponent implements OnInit {
       "./assets/images/sky.env",
       scene
     );
-
-    envTex.rotationY = 1;
-
+  
+    // Ajustar rotación del entorno
+    envTex.rotationY = Math.PI;  // 180 grados en radianes
+  
+    // Asegurarse de que el nivel de detalle esté configurado correctamente
+    envTex.lodGenerationScale = 0.8;  // Ajusta este valor según sea necesario
+  
+    // Configurar Mipmap
+    envTex.gammaSpace = false; // Habilitar espacio gamma si es necesario
+  
     scene.environmentTexture = envTex;
-    scene.createDefaultSkybox(envTex, true);
+    scene.createDefaultSkybox(envTex, true, 1000, 0.1, true);
     scene.environmentIntensity = 1;
-
+  
     return scene;
   }
+  
 
   async CreateBox(): Promise<void> {
     const light = new PointLight("Omni0", new Vector3(0.0, 0.0, 0.0), this.scene);
