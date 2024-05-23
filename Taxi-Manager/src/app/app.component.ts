@@ -4,21 +4,13 @@ import { ConsultarMantenimientoComponent } from './consultar-mantenimiento/consu
 import { ConsultarFallasComponent } from './consultar-fallas/consultar-fallas.component';
 import { CrearFallasComponent } from './crear-fallas/crear-fallas.component';
 import { ProgramarMantenimientoComponent } from './programar-mantenimiento/programar-mantenimiento.component';
-import { ReactiveFormsModule, NgForm } from '@angular/forms';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, ConsultarMantenimientoComponent, ConsultarFallasComponent, CrearFallasComponent,
-    ProgramarMantenimientoComponent, ReactiveFormsModule, MatDatepickerModule, MatFormFieldModule, MatInputModule, MatCheckboxModule,
-    MatProgressBarModule, MatButtonModule, MatSnackBarModule,
+    ProgramarMantenimientoComponent,
 
   ],
   templateUrl: './app.component.html',
