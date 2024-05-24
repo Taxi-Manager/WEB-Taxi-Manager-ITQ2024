@@ -34,10 +34,13 @@
   <div *ngIf="historialFiltrado.length > 0">
     <h3>Historial de Mantenimiento para el Vehículo {{ identificador }}</h3>
     <div *ngFor="let servicio of historialFiltrado">
-      <h4>Fecha: {{ servicio.fecha }}</h4>
-      <p>Tipo de Servicio: {{ servicio.tipo }}</p>
+      <h4>Fecha: {{ servicio.fechaMantenimiento }}</h4>
       <p>Kilometraje: {{ servicio.kilometraje }}</p>
-      <p>Observaciones: {{ servicio.observaciones }}</p>
+      <p>Próximo mantenimiento: {{ servicio.proximaFechaMantenimiento }}</p>
+      <p>Refacciones: </p>
+      <ul>
+        <li *ngFor="let refaccion of servicio.refacciones">{{ refaccion.nombre }} - {{ refaccion.verificado ? 'Verificado' : 'No verificado' }}</li>
+      </ul>
     </div>
   </div>
 
