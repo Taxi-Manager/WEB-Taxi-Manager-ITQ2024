@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  color: #333;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;  /* Ajuste para que haya más espacio */
+  height: 70%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.content app-pantalla3-d {
+  width: 45%;  /* Ajuste para que cada componente ocupe el 45% del ancho del contenedor */
+  height: 100%;
+  display: flex;  /* Asegura que el contenido dentro se ajuste */
+}
+
+.topnav {
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: #fff;
+  border-bottom: 1px solid rgb(128, 128, 128);
+}
+
+.topnav a {
+  float: left;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 14px 16px;
+}
+
+.menu {
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 30px;
+  cursor: pointer;
+  color: #000;
+  display: none;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .content {
+      flex-direction: column;
+  }
+
+  .content app-pantalla3-d {
+      width: 90%;
+      height: 50%;
+      margin-bottom: 20px;
+  }
+}

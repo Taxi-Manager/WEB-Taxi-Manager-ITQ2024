@@ -1,0 +1,49 @@
+<div class="topnav shadow p-1">
+    <img src="./assets/images/logo.png" width="110" height="50">
+    <a>Taxi Manager</a>
+    <span class="menu" (click)="openNav(true)"><i class="bi bi-list"></i></span>
+</div>
+
+<!--lado izquierdo navbar-->
+
+<div class="sidebar shadow p-2" id="sidebar" [ngStyle]="responsiveMenu">
+    <ul>
+        <li><a routerLink=""><i class="bi bi-speedometer2"></i>Dashboard</a></li>
+        <li><a routerLink="/Reportes"><i class="bi bi-flag-fill"></i>Reportes</a></li>
+        
+        <!--Esto se puede copiar y pegar para hacer mas submenus-->
+        <li>
+            <a href="#"><i class="bi bi-taxi-front-fill"></i>Taxis<i class="bi bi-arrow-down"></i></a>
+            <ul class="dropdown-container">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+
+            </ul>
+        </li>
+        
+        <li><a routerLink="/Conductores"><i class="bi bi-person-circle"></i>Conductores</a></li>
+        <li><a href="#"><i class="bi bi-x-circle"></i>Cerrar sesion</a></li>
+    </ul>
+</div>
+
+<!--lado izquierdo navbar-->
+
+
+<!--Contenido Principal-->
+<div class="main-content">
+    <img src="./assets/images/logo.png" width="300" height="150">
+    <h1>Vehiculos Recientes</h1>
+    
+    <div class="imagenes-container">
+        <img src="./assets/images/Taxi-queretaro.jpg" alt="Descripción de la imagen" width="400" height="400" class="imagen-guapa">
+        <img src="./assets/images/Taxi-queretaro_2.jpg" alt="Descripción de la imagen" width="400" height="400" class="imagen-guapa">
+        <img src="./assets/images/Taxi-queretaro_3.jpg" alt="Descripción de la imagen" width="400" height="400" class="imagen-guapa">
+    </div>
+    <h1>Vehiculos con Problemas</h1>
+    <div class="contenedor-3d">
+        <app-pantalla3-d></app-pantalla3-d>
+    </div>
+    <app-reportes></app-reportes>
+</div>
+
+<!--Contenido Principal-->

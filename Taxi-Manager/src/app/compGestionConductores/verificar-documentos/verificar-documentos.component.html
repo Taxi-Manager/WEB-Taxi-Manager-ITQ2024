@@ -1,0 +1,98 @@
+<html>
+
+<body style="min-height: 100vh;">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <header class="container-fluid">
+    <h1 class="text-center">Verificar Documentos del Conductor</h1>
+  </header>
+  <div class="wrapper">
+    <div class="title" id="c-title">
+      Lista de Conductores Registrados
+    </div>
+    <div class="table-responsive mt-2">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Estado de Verificación</th>
+            <th>Documentos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Ejemplo de conductor en la lista -->
+          <tr>
+            <td>Aaron David Briseño Rivera</td>
+            <td>4425108974</td>
+            <td>Estado de Verificación: <strong>No verificado</strong></td>
+            <td><button class="btn btn-primary" (click)="mostrarDocumentos()">Ver y Verificar Documentos</button></td>
+          </tr>
+          <tr>
+            <td>Froylan Galvan Tellez</td>
+            <td>4481101413</td>
+            <td>Estado de Verificación: <strong>No verificado</strong></td>
+            <td><button class="btn btn-primary" (click)="mostrarDocumentos()">Ver y Verificar Documentos</button></td>
+          </tr>
+          <tr>
+            <td>Mario Valdez Rico</td>
+            <td>4418745698</td>
+            <td>Estado de Verificación: <strong>No verificado</strong></td>
+            <td><button class="btn btn-primary" (click)="mostrarDocumentos()">Ver y Verificar Documentos</button></td>
+          </tr>
+
+          <!-- Más conductores en la lista -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal para"ver documentos -->
+  <div class="cuadro-texto " *ngIf="verificacionDocumentosVisible">
+    <div class="wrapper wrapper2">
+      <button type="button" class="close" aria-label="Close" (click)="cerrarVerificacion()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="title" id="c-title">
+        Verificar Documentos
+      </div>
+      <form>
+        <div class="form-group">
+          <label for="titulo">Licencia de conducir para taxi vigente</label>
+        </div>
+        <div class="ver" id="verlicencia">
+          <button (click)="verArchivo()">Ver Licencia</button>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="verificado1" [(ngModel)]="verificado1" name="verificado1">
+          <label for="verificado">Licencia verificada </label>
+        </div>
+        <div class="form-group">
+          <label for="titulo">Identificación Oficial (INE)</label>
+        </div>
+        <div class="ver" id="verine">
+          <button (click)="verArchivo()">Ver INE</button>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="verificado2" [(ngModel)]="verificado2" name="verificado2">
+          <label for="verificado">INE verificado </label>
+        </div>
+        <div class="form-group">
+          <label for="titulo">Comprobante Domicilio (No mayor a tres meses)</label>
+        </div>
+        <div class="ver" id="vercomprobante">
+          <button (click)="verArchivo()">Ver Comprobante Domicilio</button>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="verificado3" [(ngModel)]="verificado3" name="verificado3">
+          <label for="verificado">Comprobante Domicilio verificado </label>
+        </div>
+        <div class="form-group text-center"> <!-- Agregamos la clase text-center al contenedor del botón -->
+          <button type="button" class="btn btn-primary" (click)="cargarDocumentos()">Cargar Documentos
+            Verificados</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

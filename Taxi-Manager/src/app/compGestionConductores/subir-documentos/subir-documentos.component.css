@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  display: grid;
+  place-items: center;
+  background: #bfcdda;
+
+}
+
+.wrapper {
+  width: 700px;
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.7s ease;
+}
+.wrapper2{
+  background-color: #fbf1d6;
+  width: 700px;
+}
+
+.wrapper:hover {
+  transform: scale(1.03);
+}
+
+.wrapper .title {
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 40px 40px 0 0;
+  background: linear-gradient(-135deg, #f0a418, #facb4b);
+  transition: all 1s ease;
+
+}
+
+.wrapper:hover .title {
+  font-size: 37px;
+}
+
+.wrapper form {
+  padding: 10px 30px 50px 30px;
+}
+
+button {
+  color: #dbc276;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1.5px;
+  border-style: solid;
+  border-color: #f8c86a;
+  transition: all 0.2s ease;
+}
+.cargar{
+  background-color: #f4d789;
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.02);
+  background: linear-gradient(-135deg, #f8c86a, #f0a418);
+  color: white;
+
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.cuadro-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-size: 30px;
+  color: #fff;
+}
+/* Estilo personalizado para el campo de carga de archivos */
+input[type="file"] {
+  opacity: 0; /* Ocultar el campo de carga de archivos */
+  position: absolute; /* Posicionar el campo de carga de archivos fuera del flujo del documento */
+  width: 0;
+  height: 0;
+}
+
+/* Estilo para el contenedor del botón de carga de archivos */
+.subir {
+  position: relative; /* Establecer la posición relativa para que el botón se pueda posicionar correctamente */
+  overflow: hidden; /* Ocultar el contenido que se desborda del contenedor */
+}
+
+/* Estilo para el botón de carga de archivos */
+.subir label {
+  display: inline-block;
+  background-color: #f1da63; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  border-radius: 5px; /* Borde redondeado del botón */
+  cursor: pointer; /* Cambiar el cursor a una mano al pasar sobre el botón */
+  transition: background-color 0.3s ease; /* Agregar una transición de color de fondo */
+}
+
+/* Estilo para el botón de carga de archivos al pasar el cursor sobre él */
+.subir label:hover {
+  background-color: #d6d013; /* Cambiar el color de fondo al pasar el cursor */
+}
+.nombre-archivo {
+  font-size: 16px; /* Tamaño de fuente */
+  color: #333; /* Color de texto */
+  font-weight: bold; /* Peso de la fuente */
+  text-transform: uppercase; /* Convertir texto a mayúsculas */
+}
+
+
+/* Estilo personalizado para el checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+/* Estilo para el checkbox cuando está marcado */
+input[type="checkbox"]:checked {
+  border-color: #f0a418; /* Cambiar el color del borde cuando se marca */
+}
+
+/* Estilo para el icono de marca del checkbox */
+input[type="checkbox"]::before {
+  content: '\2714'; /* Código Unicode para el símbolo de marca de verificación */
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: transparent; /* Hacer el símbolo de marca de verificación transparente inicialmente */
+  transition: color 0.3s ease; /* Agregar una transición de color */
+}
+
+/* Estilo para el icono de marca del checkbox cuando está marcado */
+input[type="checkbox"]:checked::before {
+  color: #f0a418; /* Cambiar el color del símbolo de marca de verificación cuando está marcado */
+}
+.form-group label[for="titulo"] {
+  display: block; /* Convertir en bloque para centrar horizontalmente */
+  text-align: center; /* Centrar el texto horizontalmente */
+}
+

@@ -1,0 +1,47 @@
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by Irwencena</title>
+  <link rel="stylesheet" href="./login.component.css">
+
+</head>
+<body>
+      <div class="wrapper">
+         <div class="title" id="c-title">
+            LOGIN
+         </div>
+         <form action="#" id="l-form">
+            <div class="field" id="c-email">
+               <input type="text" id="l-email" required>
+               <label>Usuario</label>
+            </div>
+            <div class="field" id="c-pass">
+               <input type="password" id="l-pass" required>
+               <label>Contraseña</label>
+            </div>
+            <div class="content">
+               <div class="checkbox">
+                  <input type="checkbox" id="remember-me">
+                  <label for="remember-me">Recuerdame</label>
+               </div>
+               <div class="pass-link">
+                  <a href="#">Recuperar cuenta</a>
+               </div>
+            </div>
+            <div class="field">
+               <input type="submit" value="Iniciar sesión">
+            </div>
+            
+         </form>
+      </div>
+   </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      handleLoginForm(); // Llama a la función handleLoginForm() cuando el DOM esté cargado
+    });
+  </script>
+
+
+
+
+
