@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -9,22 +10,12 @@ export class FirestoreService {
 
   constructor(private firestore: AngularFirestore) { }
 
-  // Crear una nueva "tabla" (colección) y agregar un documento
-  createDocument(collection: string, data: any) {
-    return this.firestore.collection(collection).add(data);
+  getItems(): Observable<any[]> {
+    return this.firestore.collection('items').valueChanges();
   }
 
-  // Leer documentos de una "tabla" (colección)
-  getDocuments(collection: string) {
-    return this.firestore.collection(collection).snapshotChanges();
+  addItem(item: any): Promise<void> {
+    const id = this.firestore.createId();
+    return this.firestore.collection('items2').doc(id).set(item);
   }
-
-  // Actualizar un documento en una "tabla" (colección)
-  updateDocument(collection: string, documentId: string, data: any) {
-    return this.firestore.collection(collection).doc(documentId).update(data);
-  }
-
-  // Eliminar un documento de una "tabla" (colección)
-  deleteDocument(collection: string, documentId: string) {
-    return this.firestore.collection(collection).doc(documentId).delete();
-  }}
+}
