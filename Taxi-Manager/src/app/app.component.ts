@@ -8,12 +8,16 @@ import { ConsultarConductorComponent } from './compGestionConductores/consultar-
 import { Pantalla3DComponent } from './componentes3D/pantalla3-d/pantalla3-d.component';
 import { DashboardComponent } from './componentesPantallaMain/dashboard/dashboard.component';
 import { GarajeComponent } from './componentesGaraje/garaje/garaje.component';
+import { LoginComponent } from './login/login.component';
+import { NewUserComponent } from './new-user/new-user.component'
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,CrearConductorComponent,EditDeleteUpdateComponent, VerificarDocumentosComponent,
-    SubirDocumentosComponent, ConsultarConductorComponent, Pantalla3DComponent, DashboardComponent, GarajeComponent
+    SubirDocumentosComponent, ConsultarConductorComponent, Pantalla3DComponent, DashboardComponent, 
+    GarajeComponent, RouterOutlet, LoginComponent,NewUserComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
