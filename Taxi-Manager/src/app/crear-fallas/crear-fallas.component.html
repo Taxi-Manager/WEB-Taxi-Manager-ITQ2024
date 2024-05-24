@@ -7,11 +7,9 @@
     </div>
     <div class="form-group">
       <label for="vehiculo">TZ del Vehículo para asociar:</label>
-      <select id="vehiculo" name="vehiculo" [(ngModel)]="vehiculoSeleccionado" class="form-control" required>
-        <option value="">Seleccione un Vehículo</option>
-        <!-- Opciones de vehículos cargadas desde el componente -->
-      </select>
+      <input type="text" id="tzvehiculo" name="vehiculo" [(ngModel)]="tzvehiculo" class="form-control" required>
     </div>
+
     <div class="form-group">
       <label for="diagnostico">Diagnóstico del Mecánico:</label>
       <input type="text" id="diagnostico" name="diagnostico" [(ngModel)]="diagnostico" class="form-control">

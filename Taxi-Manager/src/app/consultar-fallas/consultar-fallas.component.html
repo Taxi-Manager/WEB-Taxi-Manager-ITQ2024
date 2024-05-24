@@ -5,9 +5,9 @@
   <div class="form-group">
     <label for="estadoFiltro">Filtrar por Estado:</label>
     <select id="estadoFiltro" [(ngModel)]="estadoFiltro" class="form-control" (change)="filtrarPorEstado()">
-      <option value="">Todos</option>
+      <option value="Todos">Todos</option>
       <option value="Pendiente">Pendiente</option>
-      <option value="En Proceso">En Proceso</option>
+      <option value="En proceso">En Proceso</option>
       <option value="Concluida">Concluida</option>
     </select>
   </div>
@@ -27,10 +27,13 @@
   <div *ngFor="let falla of fallasFiltradas">
     <div class="card mb-3">
       <div class="card-body">
-        <h5 class="card-title">Descripción: {{ falla.descripcion }}</h5>
-        <p class="card-text"><strong>Estado:</strong> {{ falla.estado }}</p>
+        <p class="card-text"><strong>Descripción:</strong> {{ falla.descripcion }}</p>
+        <p class="card-text"><strong>Estado falla :</strong> {{ falla.estadoFalla }}</p>
+        <p class="card-text"><strong>Estado vehiculo:</strong> {{ falla.estadoVehiculo }}</p>
         <p class="card-text"><strong>Diagnóstico:</strong> {{ falla.diagnostico }}</p>
-        <p class="card-text"><strong>Fecha:</strong> {{ falla.fecha | date }}</p>
+        <p class="card-text"><strong>Tz del vehiculo asociado:</strong> {{ falla.tzvehiculo}}</p>
+        <p class="card-text"><strong>Fecha:</strong> {{ falla.fechaRegistro}}</p>
+
         <button (click)="eliminarFalla(falla)" class="btn btn-danger">Eliminar</button>
       </div>
     </div>

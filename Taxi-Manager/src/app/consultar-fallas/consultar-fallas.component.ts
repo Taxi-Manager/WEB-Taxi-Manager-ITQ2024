@@ -1,50 +1,71 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { Observable } from 'rxjs';
 import { FormsModule } from '@angular/forms';
-import { NgFor } from '@angular/common';
 import { DatePipe } from '@angular/common';
-
+import { NgFor } from '@angular/common';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-consultar-fallas',
   standalone: true,
-  imports: [FormsModule, NgFor, DatePipe],
+  imports: [FormsModule, DatePipe, NgFor],
   templateUrl: './consultar-fallas.component.html',
-  styleUrl: './consultar-fallas.component.css'
+  styleUrls: ['./consultar-fallas.component.css']
 })
-export class ConsultarFallasComponent {
-  fallas: any[] = [
-    { descripcion: 'Problema con el motor', estado: 'Pendiente', diagnostico: 'A revisar', fecha: new Date('2024-05-01') },
-    { descripcion: 'Cambio de frenos', estado: 'En Proceso', diagnostico: 'En progreso', fecha: new Date('2024-05-02') },
-    { descripcion: 'Alineación de ruedas', estado: 'Concluida', diagnostico: 'Completado', fecha: new Date('2024-05-03') }
-    // Agregar más fallas según sea necesario
-  ];
-
+export class ConsultarFallasComponent implements OnInit {
+  fallas: Observable<any[]> | undefined;
   fallasFiltradas: any[] = [];
-  estadoFiltro: string = '';
+  estadoFiltro: string = 'Todos';
   ordenFecha: string = 'asc';
 
+  constructor(private db: AngularFireDatabase) { }
+
   ngOnInit() {
-    this.fallasFiltradas = this.fallas;
+    // Obtener la lista de fallas desde Firebase
+    this.fallas = this.db.list('fallas').snapshotChanges();
+    this.fallas.subscribe(data => {
+      // Al recibir los datos, asignarlos a la variable fallasFiltradas
+      this.fallasFiltradas = data.map(item => ({ key: item.payload.key, ...item.payload.val() }));
+      // Filtrar y ordenar las fallas
+      this.filtrarPorEstado();
+    });
   }
 
   filtrarPorEstado() {
-    if (this.estadoFiltro) {
-      this.fallasFiltradas = this.fallas.filter(falla => falla.estado === this.estadoFiltro);
-    } else {
-      this.fallasFiltradas = this.fallas;
+    if (this.estadoFiltro && this.estadoFiltro.trim() !== '') {
+      // Aplicar filtro si hay un estado seleccionado
+      this.fallas?.subscribe(items => {
+        console.log('Filtrando por estado:', this.estadoFiltro);
+        switch (this.estadoFiltro) {
+          case 'Todos':
+            this.fallasFiltradas = items.map(item => ({ key: item.payload.key, ...item.payload.val() }));
+            break;
+          default:
+            this.fallasFiltradas = items.map(item => ({ key: item.payload.key, ...item.payload.val() }))
+              .filter(falla => falla.estadoFalla === this.estadoFiltro);
+        }
+        this.ordenarPorFecha();
+      });
     }
-    this.ordenarPorFecha();
   }
+
+
+
 
   ordenarPorFecha() {
     this.fallasFiltradas.sort((a, b) => {
-      const dateA = new Date(a.fecha).getTime();
-      const dateB = new Date(b.fecha).getTime();
+      // Utilizar la fecha de registro para ordenar las fallas
+      const dateA = new Date(a.fechaRegistro).getTime();
+      const dateB = new Date(b.fechaRegistro).getTime();
       return this.ordenFecha === 'asc' ? dateA - dateB : dateB - dateA;
     });
   }
 
   eliminarFalla(falla: any) {
-    this.fallas = this.fallas.filter(f => f !== falla);
-    this.filtrarPorEstado();
+    // Obtener la clave única de la falla
+    const fallaKey = falla.key;
+    // Eliminar la falla de la base de datos
+    this.db.list('fallas').remove(fallaKey);
+    console.log('Falla eliminada');
   }
 }

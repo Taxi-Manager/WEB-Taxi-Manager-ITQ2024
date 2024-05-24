@@ -4,7 +4,6 @@ import { ConsultarMantenimientoComponent } from './consultar-mantenimiento/consu
 import { ConsultarFallasComponent } from './consultar-fallas/consultar-fallas.component';
 import { CrearFallasComponent } from './crear-fallas/crear-fallas.component';
 import { ProgramarMantenimientoComponent } from './programar-mantenimiento/programar-mantenimiento.component';
-import { FirestoreService } from './firestore.service';
 import { NgFor } from '@angular/common';
 
 
@@ -19,21 +18,6 @@ import { NgFor } from '@angular/common';
   styleUrl: './app.component.css'
 
 })
-export class AppComponent implements OnInit {
-  items: any[] = [];
-
-  constructor(private firestoreService: FirestoreService) { }
-
-  ngOnInit() {
-    this.firestoreService.getItems().subscribe(data => {
-      this.items = data;
-    });
-  }
-
-  addItem() {
-    const newItem = { name: 'New Item' };
-    this.firestoreService.addItem(newItem).then(() => {
-      console.log('Item added successfully');
-    });
-  }
+export class AppComponent {
+  title = 'Taxi-Manager';
 }
