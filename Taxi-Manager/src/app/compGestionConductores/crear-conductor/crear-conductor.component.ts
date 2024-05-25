@@ -42,7 +42,23 @@ export class CrearConductorComponent implements OnInit {
         // Procesa los datos según sea necesario
         this.data = data.response.Solicitante; // Extrae solo el objeto `Solicitante`
         this.cdr.detectChanges(); // Forzar la detección de cambios
-
+        
+        
+        //PROBABLE SUBIDA DE ARCH A FIREBASE?
+        //const solicitante = data.response.Solicitante; // Extrae solo el objeto `Solicitante`
+        //this.uploadToFirebase(solicitante); // Llama a la función para subir los datos a Firebase
       });
   }
+
+  /*
+  uploadToFirebase(solicitante: any) {
+    this.db.list('/solicitantes').push(solicitante)
+      .then(() => {
+        console.log('Datos subidos a Firebase exitosamente');
+      })
+      .catch((error) => {
+        console.error('Error al subir los datos a Firebase', error);
+      });
+  }
+  */
 }
