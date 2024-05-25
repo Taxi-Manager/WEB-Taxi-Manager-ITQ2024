@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import {CrearConductorComponent} from './compGestionConductores/crear-conductor/crear-conductor.component'
 import {EditDeleteUpdateComponent} from './compGestionConductores/edit-delete-update/edit-delete-update.component'
 import {VerificarDocumentosComponent} from './compGestionConductores/verificar-documentos/verificar-documentos.component';
@@ -12,8 +14,17 @@ import { GarajeComponent } from './componentesGaraje/garaje/garaje.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CrearConductorComponent,EditDeleteUpdateComponent, VerificarDocumentosComponent,
-    SubirDocumentosComponent, ConsultarConductorComponent, Pantalla3DComponent, DashboardComponent, GarajeComponent
+  imports: [
+    RouterOutlet,
+    CrearConductorComponent,
+    EditDeleteUpdateComponent, 
+    VerificarDocumentosComponent,
+    SubirDocumentosComponent, 
+    ConsultarConductorComponent, 
+    Pantalla3DComponent, 
+    DashboardComponent, 
+    GarajeComponent,
+    FormsModule, ReactiveFormsModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
