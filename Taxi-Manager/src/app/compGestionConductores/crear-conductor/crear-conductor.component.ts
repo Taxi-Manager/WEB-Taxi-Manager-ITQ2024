@@ -42,7 +42,7 @@ export class CrearConductorComponent implements OnInit {
         // Procesa los datos según sea necesario
         this.data = data.response.Solicitante; // Extrae solo el objeto `Solicitante`
         this.cdr.detectChanges(); // Forzar la detección de cambios
-        //console.log(data.response.Solicitante);
+        console.log(data.response.Solicitante);
         
         //PROBABLE SUBIDA DE ARCH A FIREBASE?
         //const solicitante = data.response.Solicitante; // Extrae solo el objeto `Solicitante`
