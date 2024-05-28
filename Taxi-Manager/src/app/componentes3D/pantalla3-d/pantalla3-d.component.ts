@@ -76,7 +76,7 @@ export class Pantalla3DComponent implements OnInit {
   CreateScene(): Scene {
     const scene = new Scene(this.engine);
     const envTex = CubeTexture.CreateFromPrefilteredData(
-      "./assets/images/sky.env",
+      "./assets/images/skyn.env",
       scene
     );
   
