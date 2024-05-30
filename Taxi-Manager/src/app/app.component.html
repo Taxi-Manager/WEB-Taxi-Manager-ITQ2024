@@ -19,9 +19,9 @@
             <a ><i class="bi bi-taxi-front-fill"></i>Conductores<i class="bi bi-arrow-down"></i></a>
             <ul  class="dropdown-container">
               <li><a routerLink="/conductores/crear">Crear</a></li>
-              <li><a routerLink="conductores/editar">Editar</a></li>
-              <li><a routerLink="/conductores/filtrar">Consultar</a></li>
               <li><a routerLink="/conductores/subirdoc">Subir Documentos</a></li>
+              <li><a routerLink="/conductores/filtrar">Consultar</a></li>
+              <li><a routerLink="conductores/editar">Editar</a></li>
               <li><a routerLink="conductores/verificar">Verificar</a></li>
 
 
@@ -30,9 +30,9 @@
     </div>
     <div class="interior">
       <router-outlet ></router-outlet>
-      <router-outlet name="secondary"></router-outlet>
     </div>
   </div>
   <div class="login">
 <app-login *ngIf="!showNavbar"></app-login>
 </div>
+

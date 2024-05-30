@@ -1,99 +1,121 @@
-/* styles.css */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-h1, h2 {
-    text-align: center;
-    color:#f8c86a;
+html,
+body {
+  display: grid;
+  place-items: center;
+  background: #bfcdda;
+
 }
 
-section {
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius:22px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.wrapper {
+  width: 700px;
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.7s ease;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.wrapper:hover {
+  transform: scale(1.03);
 }
 
-li {
-    margin-bottom: 10px;
+.wrapper .title {
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 40px 40px 0 0;
+  background: linear-gradient(-135deg, #f0a418, #facb4b);
+  transition: all 1s ease;
+
 }
 
-/* Estilos para el formulario de edición de conductor */
-#driverFormSection {
-    max-width: 600px;
-    margin: 0 auto;
+.wrapper:hover .title {
+  font-size: 37px;
 }
 
-#driverFormSection form {
-    display: flex;
-    flex-direction: column;
+.wrapper .documento {
+  padding: 10px 30px 50px 30px;
 }
 
-#driverFormSection form div {
-    margin-bottom: 15px;
+button  {
+  color: #dbc276;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #f5eede;
+  border: 1.5px;
+  border-style: solid;
+  border-color: #f8c86a;
+  transition: all 0.2s ease;
+  margin-left: 10px;
 }
 
-label {
-    font-weight: bold;
+button:hover {
+  transform: scale(1.02);
+  background: linear-gradient(-135deg, #f8c86a, #f0a418);
+  color: white;
+
 }
 
-input[type="text"],
-input[type="tel"],
+button:active {
+  transform: scale(0.95);
+}
+.btn-guardar-actualizacion{
+  background-color: rgb(246, 236, 98);
+}
+
+
+/* Estilo personalizado para el campo de carga de archivos */
 input[type="file"] {
-    width: 100%;
-    padding: 8px;
-    border-radius: 22px;
-    border: 1px solid #ccc;
+  opacity: 0; /* Ocultar el campo de carga de archivos */
+  position: absolute; /* Posicionar el campo de carga de archivos fuera del flujo del documento */
+  width: 0;
+  height: 0;
 }
 
-button {
-    padding: 10px 20px;
-    margin-left: 2%;
-    border: none;
-    border-radius: 22px;
-    background-color: white;
-    color: #f8c86a;
-    border: solid 1.5px #f8c86a;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+/* Estilo para el contenedor del botón de carga de archivos */
+.subir {
+  position: relative; /* Establecer la posición relativa para que el botón se pueda posicionar correctamente */
+  overflow: hidden; /* Ocultar el contenido que se desborda del contenedor */
 }
 
-button:hover{
-    background-color: #f8c86a;
-    color: white;
-    border-color: white;
-    transform: scale(1.03);
-}
-button:active{
- 
-    transform: scale(0.95);
-}
-
-
-/* Estilos para la lista de conductores */
-#driverList {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 0;
+/* Estilo para el botón de carga de archivos */
+.subir label {
+  display: inline-block;
+  background-color: #f1da63; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  border-radius: 5px; /* Borde redondeado del botón */
+  cursor: pointer; /* Cambiar el cursor a una mano al pasar sobre el botón */
+  transition: background-color 0.3s ease; /* Agregar una transición de color de fondo */
 }
 
-#driverList li {
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 4px;
+/* Estilo para el botón de carga de archivos al pasar el cursor sobre él */
+.subir label:hover {
+  background-color: #d6d013; /* Cambiar el color de fondo al pasar el cursor */
+}
+.nombre-archivo {
+  font-size: 16px; /* Tamaño de fuente */
+  color: #333; /* Color de texto */
+  font-weight: bold; /* Peso de la fuente */
+  text-transform: uppercase; /* Convertir texto a mayúsculas */
 }
 
-#driverList li:hover {
-    background-color: #eaeaea;
-}
+}}

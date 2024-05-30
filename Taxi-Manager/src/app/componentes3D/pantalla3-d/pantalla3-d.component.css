@@ -1,6 +1,5 @@
-#canva3d{
-  width: 500px;
-  height: 500px;
-  align-items: center;  
-  margin: 0 auto; /* Esto centra el elemento horizontalmente */
+#canva3d {
+  width: 100%;  /* Cambiar a 100% para que ocupe todo el ancho del contenedor */
+  height: 100%;  /* Cambiar a 100% para que ocupe todo el alto del contenedor */
+  display: block;  /* Asegúrate de que se comporte como un bloque */
 }

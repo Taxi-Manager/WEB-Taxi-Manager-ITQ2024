@@ -14,9 +14,7 @@ import { Pantalla3DComponent } from '../../componentes3D/pantalla3-d/pantalla3-d
 
 export class DashboardComponent {
   constructor(private el:ElementRef){
-
   }
-
   ngOnInit(): void {
 
        let alldrpdwn = document.querySelectorAll('.dropdown-container');

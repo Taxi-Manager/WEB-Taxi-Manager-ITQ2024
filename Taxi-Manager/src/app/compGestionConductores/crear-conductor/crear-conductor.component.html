@@ -7,90 +7,27 @@
 </head>
 <body>
     <h1>Registro de Conductor</h1>
-    <form id="driverForm">
-        <div>
-            <label for="nombreCompleto">Nombre Completo:</label>
-            <input type="text" id="nombreCompleto" name="nombreCompleto" required>
-        </div>
-        <div>
-            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
-        </div>
-        <div>
-            <label for="rfc">RFC:</label>
-            <input type="text" id="rfc" name="rfc" required>
-        </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" id="driverForm">
         <div>
             <label for="curp">CURP:</label>
-            <input type="text" id="curp" name="curp" required>
-        </div>
-        <div>
-            <label for="codigoPostal">Código Postal:</label>
-            <input type="text" id="codigoPostal" name="codigoPostal" required>
-            <button type="button" onclick="consultarCodigoPostal()">Consultar</button>
-        </div>
-        <div>
-            <label for="estado">Estado:</label>
-            <input type="text" id="estado" name="estado" readonly>
-        </div>
-        <div>
-            <label for="ciudad">Ciudad:</label>
-            <input type="text" id="ciudad" name="ciudad" readonly>
-        </div>
-        <div>
-            <label for="telefono">Número Telefónico:</label>
-            <input type="tel" id="telefono" name="telefono" required>
-            <button type="button" onclick="verificarNumero()">Verificar</button>
-        </div>
-        <div>
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" required>
+            <input type="text" id="curp" formControlName="curp" required>
         </div>
         <div>
             <button type="submit">Registrarse</button>
         </div>
     </form>
-
-    <script>
-        function consultarCodigoPostal() {
-            // Aquí puedes llamar a una API para obtener el estado y la ciudad según el código postal ingresado
-            // Ejemplo de cómo podrías hacerlo:
-            // const codigoPostal = document.getElementById('codigoPostal').value;
-            // fetch(`https://api.codigos-postales.com/codigo_postal/${codigoPostal}`)
-            //     .then(response => response.json())
-            //     .then(data => {
-            //         document.getElementById('estado').value = data.estado;
-            //         document.getElementById('ciudad').value = data.ciudad;
-            //     })
-            //     .catch(error => console.error('Error:', error));
-        }
-
-        function verificarNumero() {
-            // Aquí podrías utilizar un servicio de mensajería para enviar un código de verificación al número telefónico ingresado
-            // y luego validar el código ingresado por el usuario
-            // Por ejemplo, puedes utilizar Twilio, Nexmo, etc.
-        }
-
-        document.getElementById('driverForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Aquí podrías enviar los datos del formulario a tu servidor para su procesamiento
-            // Por ejemplo, podrías utilizar fetch() para enviar una solicitud POST al servidor
-            // con los datos del formulario en formato JSON
-            // const formData = new FormData(this);
-            // fetch('URL_DEL_SERVIDOR', {
-            //     method: 'POST',
-            //     body: JSON.stringify(Object.fromEntries(formData)),
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     }
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     console.log('Respuesta del servidor:', data);
-            // })
-            // .catch(error => console.error('Error:', error));
-            console.log('Formulario enviado');
-        });
-    </script>
+    <div class="info" *ngIf="data" [ngClass]="{'datos-cargados': isDataLoaded}">
+        <h2>Información del Solicitante</h2><label [ngClass]="{'datos-cargados': isDataLoaded}" class="x" (click)="resetData()">X</label>
+        <p>Nombre: {{ data.Nombres }}</p>
+        <p>Apellido Paterno: {{ data.ApellidoPaterno }}</p>
+        <p>Apellido Materno: {{ data.ApellidoMaterno }}</p>
+        <p>CURP: {{ data.CURP }}</p>
+        <p>Sexo: {{ data.Sexo }}</p>
+        <p>Fecha de Nacimiento: {{ data.FechaNacimiento }}</p>
+        <p>Nacionalidad: {{ data.Nacionalidad }}</p>
+        <p>Entidad de Nacimiento: {{ data.EntidadNacimiento }}</p>
+        <p>Documento Probatorio: {{ data.DocProbatorio }}</p>
+        <p>Status CURP: {{ data.StatusCurp }}</p>
+      </div>
 </body>
 </html>

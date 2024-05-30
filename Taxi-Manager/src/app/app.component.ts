@@ -3,6 +3,7 @@ import { Router, Event, NavigationEnd, RouterOutlet, RouterModule } from '@angul
 import { filter } from 'rxjs/operators';
 import { LoginComponent } from './login/login.component';
 import { NewUserComponent } from './new-user/new-user.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CrearConductorComponent } from './compGestionConductores/crear-conductor/crear-conductor.component';
 import { EditDeleteUpdateComponent } from './compGestionConductores/edit-delete-update/edit-delete-update.component';
@@ -14,14 +15,18 @@ import { DashboardComponent } from './componentesPantallaMain/dashboard/dashboar
 import { ReportesComponent } from "./componentesPantallaMain/reportes/reportes.component";
 import { CommonModule } from '@angular/common';
 import { DropdownService } from './dropdown.service';
+import { GarajeComponent } from './componentesGaraje/garaje/garaje.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [CommonModule,RouterModule, RouterOutlet,CrearConductorComponent, EditDeleteUpdateComponent, VerificarDocumentosComponent,
-    SubirDocumentosComponent, ConsultarConductorComponent, Pantalla3DComponent, DashboardComponent, NewUserComponent, LoginComponent, ReportesComponent]
+  imports: [CommonModule,RouterModule, RouterOutlet,CrearConductorComponent,
+     EditDeleteUpdateComponent, VerificarDocumentosComponent,
+    SubirDocumentosComponent, ConsultarConductorComponent, 
+    Pantalla3DComponent, DashboardComponent, NewUserComponent,FormsModule,GarajeComponent, 
+    LoginComponent, ReportesComponent,ReactiveFormsModule]
 })
 export class AppComponent implements OnInit {
   showNavbar = true;  // Inicialmente, asumimos que la barra de navegación debe mostrarse
