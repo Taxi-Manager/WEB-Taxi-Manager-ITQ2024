@@ -11,7 +11,7 @@ html,
 body {
   display: grid;
   place-items: center;
-  background: #bfcdda;
+  background: white;
 
 }
 
@@ -59,7 +59,7 @@ button {
   font-weight: 500;
   cursor: pointer;
   background-color: #fff;
-  border: 1.5px;
+  border: 1.5px;border-radius: 22px;
   border-style: solid;
   border-color: #f8c86a;
   transition: all 0.2s ease;
@@ -73,6 +73,7 @@ button:hover {
   transform: scale(1.02);
   background: linear-gradient(-135deg, #f8c86a, #f0a418);
   color: white;
+  border-color: white;
 
 }
 
@@ -103,21 +104,32 @@ input[type="file"] {
   height: 0;
 }
 
+
+
+
 /* Estilo para el contenedor del botón de carga de archivos */
 .subir {
   position: relative; /* Establecer la posición relativa para que el botón se pueda posicionar correctamente */
-  overflow: hidden; /* Ocultar el contenido que se desborda del contenedor */
+  overflow: hidden; /* Ocultar el contenido que se desborda del contenedor */  transition: all 0.2s ease-in-out;
+
 }
 
 /* Estilo para el botón de carga de archivos */
 .subir label {
+  margin-left: 10%;
   display: inline-block;
+  justify-content: center;
+  text-align: center;
   background-color: #f1da63; /* Color de fondo del botón */
   color: #fff; /* Color del texto del botón */
   padding: 10px 20px; /* Espaciado interno del botón */
-  border-radius: 5px; /* Borde redondeado del botón */
+  border-radius: 22px; /* Borde redondeado del botón */
   cursor: pointer; /* Cambiar el cursor a una mano al pasar sobre el botón */
-  transition: background-color 0.3s ease; /* Agregar una transición de color de fondo */
+  transition: all 0.3s ease-in-out;
+}
+
+.subir:hover{
+  transform: scale(1.03);
 }
 
 /* Estilo para el botón de carga de archivos al pasar el cursor sobre él */
@@ -127,8 +139,9 @@ input[type="file"] {
 .nombre-archivo {
   font-size: 16px; /* Tamaño de fuente */
   color: #333; /* Color de texto */
-  font-weight: bold; /* Peso de la fuente */
+  font-weight:lighter; /* Peso de la fuente */
   text-transform: uppercase; /* Convertir texto a mayúsculas */
+  padding-left: 1.3%;
 }
 
 
@@ -139,17 +152,18 @@ input[type="checkbox"] {
   -moz-appearance: none;
   width: 25px;
   height: 25px;
+  margin-top: 2%;
   border: 2px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
   transition: border-color 0.3s ease;
+  margin-left: 10%;
+
 }
 
-/* Estilo para el checkbox cuando está marcado */
 input[type="checkbox"]:checked {
-  border-color: #f0a418; /* Cambiar el color del borde cuando se marca */
+  border-color: #f0a418; 
 }
-
 /* Estilo para el icono de marca del checkbox */
 input[type="checkbox"]::before {
   content: '\2714'; /* Código Unicode para el símbolo de marca de verificación */
@@ -169,5 +183,12 @@ input[type="checkbox"]:checked::before {
 .form-group label[for="titulo"] {
   display: block; /* Convertir en bloque para centrar horizontalmente */
   text-align: center; /* Centrar el texto horizontalmente */
+  font-weight: bold;
 }
+.verificado{
+  padding-left: 1.2%;transition: all 0.3s ease-in-out; 
+}
+input[type="checkbox"]:checked ~ .verificado {
+  color: #f0a418;   padding-left: 2%;
 
+}

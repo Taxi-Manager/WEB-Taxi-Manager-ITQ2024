@@ -144,14 +144,12 @@ ul>li>a.active{
 
 /*Contenido de pantalla principal*/
 .main-content{
-    margin-top: 80px;
-    margin-left: 230px;
     padding: 1px 16px;
 }
 
 .main-content h1{
     text-align: center;
-    font-size: 17px;
+    font-size: 22px;
     font-weight: bold;
     padding: 14px 16px;
 }

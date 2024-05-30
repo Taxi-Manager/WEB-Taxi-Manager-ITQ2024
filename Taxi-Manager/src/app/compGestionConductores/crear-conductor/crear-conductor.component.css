@@ -3,9 +3,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #fff;
 }
-
+body:hover  h1{
+    transform: scale(1.03);
+}
 .container {
     max-width: 600px;
     margin: 50px auto;
@@ -17,9 +19,11 @@ body {
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #f4c659;    transition: all 0.8s ease-in-out;
 }
-
+.container:hover ~  h1{
+    font-size: 110%;
+}
 form {
     max-width: 400px;
     margin: 0 auto;
@@ -41,21 +45,23 @@ input[type="tel"],
 input[type="email"] {
     width: calc(100% - 10px);
     padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    color: darkgray;
+    border-radius: 22px;
+    border: 1.5px solid lightgrey;
 }
 
-button {
+button {margin-top: 15px;
     padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: #fff;
+    border: 1.5px solid #f4c659;
+    border-radius:22px ;
+    color:#f4c659;
+    background-color: white;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #f4c659;color:white;transform: scale(1.03);
 }
 
 input[readonly] {

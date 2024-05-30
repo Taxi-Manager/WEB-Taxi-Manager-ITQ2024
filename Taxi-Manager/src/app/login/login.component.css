@@ -6,11 +6,11 @@
   font-family: 'Poppins', sans-serif;
 }
 html,body{
+  padding-top: 0;
   display: grid;
   height: 100%;
   width: 100%;
   place-items: center;
-  background: #bfcdda;
   
 }
 ::selection{

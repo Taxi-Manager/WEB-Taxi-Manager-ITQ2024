@@ -12,7 +12,7 @@ import { Pantalla3DComponent } from '../../componentes3D/pantalla3-d/pantalla3-d
   styleUrl: './dashboard.component.css'
 })
 
-export class DashboardComponent implements OnInit{
+export class DashboardComponent {
   constructor(private el:ElementRef){
 
   }

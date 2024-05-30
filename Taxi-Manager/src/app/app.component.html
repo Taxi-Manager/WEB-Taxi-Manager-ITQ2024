@@ -1,11 +1,38 @@
+<div *ngIf="showNavbar">
+    <div class="topnav shadow p-1">
+      <a>Taxi Manager</a>
+      <span class="menu" (click)="openNav(true)"><i class="bi bi-list"></i></span>
+      <a routerLink="new" class="l-status">A</a>
+    </div>
+    <div class="sidebar shadow p-2" id="sidebar">
+      <ul>
+        <li><a routerLink="/dashboard"style="color: #f4c659;"><i class="bi bi-speedometer2"></i>Dashboard</a></li>
+        <li><a routerLink="/Reportes"><i class="bi bi-flag-fill"></i>Reportes</a></li>
+        <li>
+          <a ><i class="bi bi-taxi-front-fill"></i>Taxis<i class="bi bi-arrow-down"></i></a>
+          <ul class="dropdown-container">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+          </ul>
+        </li>
+        <li>
+            <a ><i class="bi bi-taxi-front-fill"></i>Conductores<i class="bi bi-arrow-down"></i></a>
+            <ul  class="dropdown-container">
+              <li><a routerLink="/conductores/crear">Crear</a></li>
+              <li><a routerLink="conductores/editar">Editar</a></li>
+              <li><a routerLink="/conductores/filtrar">Consultar</a></li>
+              <li><a routerLink="/conductores/subirdoc">Subir Documentos</a></li>
+              <li><a routerLink="conductores/verificar">Verificar</a></li>
 
-<html>
-<body>
 
-<div>
-    <router-outlet></router-outlet>
-
+            </ul>        <li><a (click)="logout()"  class="cerrar"><i class="bi bi-x-circle"></i>Cerrar sesion</a></li>
+      </ul>
+    </div>
+    <div class="interior">
+      <router-outlet ></router-outlet>
+      <router-outlet name="secondary"></router-outlet>
+    </div>
+  </div>
+  <div class="login">
+<app-login *ngIf="!showNavbar"></app-login>
 </div>
-</body>
-</html>
-

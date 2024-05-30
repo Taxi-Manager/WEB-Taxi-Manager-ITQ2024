@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,body{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background: #ddd;
+  
+}
+
+.btn form{
+      transform: scale(0);
+}
+
+.btn{  cursor:default;
+   width: 65%;
+   height: 100px;
+background: linear-gradient(-135deg, #f0a418, #facb4b);   border-radius: 22px;
+   display: flex;
+   align-items: center; 
+   justify-content: center;
+   box-shadow: 0px 40px 40px rgba(0,0,0,0.1);
+   transition: all 0.5s ease;
+   border: none; 
+}
+.btn .btn-t{
+   position: absolute;
+   color: white;
+   font-size: 27px;
+    text-align: center;
+   font-weight: bold; 
+      transition: all 0.5s ease;
+   font-family: 'Poppins', sans-serif;
+
+}
+.btn:hover {
+height: 250px;
+   width: 90%;
+background: #fff;
+      box-shadow: 0px 10px 40px rgba(252, 178, 64,0.35);
+
+}
+.btn:hover .btn-t{
+   font-weight: bold; 
+   font-size: 30px;
+   color: #FCB240;
+   padding-bottom: 15%;
+   
+
+}
+.btn:hover form{
+     transition: all 0.5s ease;
+   transform: scale(.89);
+display: block;
+}
+.btn form label{
+   font-family: 'Poppins', sans-serif;
+   position: relative;
+   color: grey;
+   top: -31px;
+   left: 15px;
+   pointer-events: none;
+     transition: all 0.3s ease;
+
+}
+
+.btn form input{
+  height: 45px;
+  width: 100%;
+  position: relative;
+  font-size: 17px;
+  padding-left: 20px;
+
+
+   margin-top: 4%;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+
+}
+
+
+.btn .del{
+  color: red;
+  border: none;
+  padding-right: 5%;
+  top: 16%;  
+
+  font-size: 20px;
+  padding-right: 19px;
+  cursor: pointer;
+  background-color: #fff;
+border: 3.5px solid red;
+  transition: all 0.2s ease;
+}
+
+.btn .del:hover{  
+
+  transform: scale(1.09);
+    border-color:red;
+
+  color:red;
+
+}
+.btn .guardar{
+    background: linear-gradient(-135deg, #f0a418, #facb4b);   
+    border-radius: 22px;
+   color: white;
+   border-color: #f8c86a;  transition: all 0.2s ease;
+
+}
+
+.btn .guardar:hover{
+  transform: scale(1.1);
+    color:white;
+  
+
+}
+
+input[type="checkbox"]:hover{
+  transform: scale(1.1);
+  
+
+}
+
+.btn input[type="submit"]:active{
+  transform: scale(0.95);
+}
+
+input[type="checkbox"]:active{
+  transform: scale(0.7);
+}
+
+
+
+.privi{
+   height: 20px;
+  width: 50%;
+   position:relative;
+   left: -34%;
+   
+}
+.superu{
+   pointer-events: none;
+   color: gray;
+     font-family: 'Poppins', sans-serif;
+   position:absolute;
+   top: 15%;
+   padding-left: 26%;
+   transition: all 0.5s ease;
+}
+input[type="checkbox"]:valid + .superu{
+   font-weight: bold; 
+   color: #FCB240;   padding-left: 29%;
+
+}
+input[type="checkbox"]:not(:checked){
+  transform: scale(0.8);
+   
+}
+input[type="checkbox"]:not(:checked) + .superu {
+  transform: scale(0.9);
+   color: gray;
+      font-weight: normal; 
+   padding-left: 24%;
+
+}
+

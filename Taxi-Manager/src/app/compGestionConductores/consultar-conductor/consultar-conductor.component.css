@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    margin-top: -16px;
   }
   
   header {
@@ -15,11 +14,20 @@ body {
     padding: 20px;
   }
   
-  h1, h2 {
+  h1 {
     margin-bottom: 10px;
     text-align: center;
+    color: black;  }
+  h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    color:#f4c659;transition: all 0.8s ease-in-out;
   }
-  
+body:hover h2{
+  transform: scale(1.04);
+
+}
+
   form {
     display: flex;
     flex-direction: column;
@@ -35,22 +43,30 @@ body {
   input[type="date"],
   select,
 
-  button {
+  button {    color: darkgray;
+
     margin-bottom: 15px;
-    padding: 8px;
-    border: 3px solid #F9CF8B;
-    border-radius: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    border: 1.5px solid lightgray;
+    border-radius: 22px;
   }
   
   button {
-    background-color: #F28482;
-    color: #fff;
-    border: none;
+    background-color: white;
+    color: #f4c659;
+    border: 1.5px solid #f4c659;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
   }
   
   button:hover {
-    background-color: #F9CF8B;
+    background-color: #f4c659;
+    color: white;
+    transform: scale(1.03);
   }
   
   footer {
@@ -63,6 +79,9 @@ body {
     width: 100%;
   }
   header{
-    background-color: #F6BD60;
+    background-color: white;
   }
   
+
+
+ 

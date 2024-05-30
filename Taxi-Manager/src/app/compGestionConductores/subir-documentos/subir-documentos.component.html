@@ -1,8 +1,6 @@
 <body style="min-height: 100vh;">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <header class="container-fluid">
-    <h1 class="text-center">Subir Documentos del Conductor</h1>
-  </header>
+  
 <div class="wrapper">
   <div class="title" id="c-title">
     Subir Documentos
@@ -18,7 +16,7 @@
     </div>
     <div class="form-group">
       <input type="checkbox" id="verificado1" [(ngModel)]="verificado1" name="verificado1">
-      <label for="verificado">Licencia verificada </label>
+      <label class="verificado" for="verificado">Licencia verificada </label>
     </div>
     <div class="form-group">
       <label for="titulo">Identificación oficial (INE)</label>
@@ -30,7 +28,7 @@
     </div>
     <div class="form-group">
       <input type="checkbox" id="verificado2" [(ngModel)]="verificado2" name="verificado2">
-      <label for="verificado">INE verificada </label>
+      <label class="verificado" for="verificado">INE verificada </label>
     </div>
     <div class="form-group">
       <label for="titulo">Comprobante de domicilio (no mayor a 3 meses)</label>
@@ -42,7 +40,7 @@
     </div>
     <div class="form-group">
       <input type="checkbox" id="verificado3" [(ngModel)]="verificado3" name="verificado3">
-      <label for="verificado">Comprobante Domicilio verificado </label>
+      <label class="verificado" for="verificado">Comprobante Domicilio verificado </label>
     </div>
     <div class="form-group text-center"> <!-- Agregamos la clase text-center al contenedor del botón -->
       <button type="button" class="btn btn-primary" (click)="cargarDocumentos()">Cargar Documentos
