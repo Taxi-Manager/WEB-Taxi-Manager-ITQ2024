@@ -2,52 +2,54 @@
     <h1>Visualizador GARAJE 3D</h1>
 </div>
 
-<div class="container">
-    <div class="card">
-        <div class="content">
-            <app-pantalla3-d [canvasId]="'canva3d1'"></app-pantalla3-d>
+<div class="carousel-container">
+    <div class="carousel">
+        <div class="card" id="card1">
+            <div class="content">
+                <app-pantalla3-d [canvasId]="'canva3d1'"></app-pantalla3-d>
+            </div>
+            <div class="details">
+                <h1>Vehículo #4012</h1>
+                <ul class="taxi-characteristics">
+                    <li><strong>Modelo y Marca:</strong> Toyota Camry</li>
+                    <li><strong>Color y Señalización:</strong> Amarillo con señal luminosa en el techo</li>
+                    <li><strong>Tecnología y Conectividad:</strong> Sistema de radio, aplicaciones móviles, puertos de carga</li>
+                    <li><strong>Regulaciones y Licencias:</strong> Licencias y permisos en regla, conductores capacitados</li>
+                </ul>
+            </div>
         </div>
-        <div class="details">
-            <h1>Vehículo #4012</h1>
-            <ul class="taxi-characteristics">
-                <li><strong>Modelo y Marca:</strong> Toyota Camry</li>
-                <li><strong>Color y Señalización:</strong> Amarillo con señal luminosa en el techo</li>
-                <li><strong>Tecnología y Conectividad:</strong> Sistema de radio, aplicaciones móviles, puertos de carga</li>
-                <li><strong>Regulaciones y Licencias:</strong> Licencias y permisos en regla, conductores capacitados</li>
-            </ul>
+
+        <div class="card" id="card2">
+            <div class="content">
+                <app-pantalla3-d [canvasId]="'canva3d2'"></app-pantalla3-d>
+            </div>
+            <div class="details">
+                <h1>Vehículo #4013</h1>
+                <ul class="taxi-characteristics">
+                    <li><strong>Modelo y Marca:</strong> Toyota Camry</li>
+                    <li><strong>Color y Señalización:</strong> Amarillo con señal luminosa en el techo</li>
+                    <li><strong>Tecnología y Conectividad:</strong> Sistema de radio, aplicaciones móviles, puertos de carga</li>
+                    <li><strong>Regulaciones y Licencias:</strong> Licencias y permisos en regla, conductores capacitados</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" id="card3">
+            <div class="content">
+                <app-pantalla3-d [canvasId]="'canva3d3'"></app-pantalla3-d>
+            </div>
+            <div class="details">
+                <h1>Vehículo #4014</h1>
+                <ul class="taxi-characteristics">
+                    <li><strong>Modelo y Marca:</strong> Toyota Camry</li>
+                    <li><strong>Color y Señalización:</strong> Amarillo con señal luminosa en el techo</li>
+                    <li><strong>Tecnología y Conectividad:</strong> Sistema de radio, aplicaciones móviles, puertos de carga</li>
+                    <li><strong>Regulaciones y Licencias:</strong> Licencias y permisos en regla, conductores capacitados</li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <div class="card">
-        <div class="content">
-            <app-pantalla3-d [canvasId]="'canva3d2'"></app-pantalla3-d>
-        </div>
-        <div class="details">
-            <h1>Vehículo #4013</h1>
-
-            <ul class="taxi-characteristics">
-                <li><strong>Modelo y Marca:</strong> Toyota Camry</li>
-                <li><strong>Color y Señalización:</strong> Amarillo con señal luminosa en el techo</li>
-                <li><strong>Tecnología y Conectividad:</strong> Sistema de radio, aplicaciones móviles, puertos de carga</li>
-                <li><strong>Regulaciones y Licencias:</strong> Licencias y permisos en regla, conductores capacitados</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="content">
-            <app-pantalla3-d [canvasId]="'canva3d3'"></app-pantalla3-d>
-        </div>
-        <div class="details">
-            <h1>Vehículo #4013</h1>
-
-            <ul class="taxi-characteristics">
-                <li><strong>Modelo y Marca:</strong> Toyota Camry</li>
-                <li><strong>Color y Señalización:</strong> Amarillo con señal luminosa en el techo</li>
-                <li><strong>Tecnología y Conectividad:</strong> Sistema de radio, aplicaciones móviles, puertos de carga</li>
-                <li><strong>Regulaciones y Licencias:</strong> Licencias y permisos en regla, conductores capacitados</li>
-            </ul>
-        </div>
-    </div>
-
+    <button class="carousel-button prev" (click)="prevCard()">&#10094;</button>
+    <button class="carousel-button next" (click)="nextCard()">&#10095;</button>
 </div>
