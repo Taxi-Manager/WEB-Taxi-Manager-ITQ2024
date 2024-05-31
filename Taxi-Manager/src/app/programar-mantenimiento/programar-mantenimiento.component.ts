@@ -71,6 +71,7 @@ export class ProgramarMantenimientoComponent implements OnInit {
       })
         .then(() => {
           console.log('Mantenimiento registrado con éxito');
+          console.log('Proximo mantenimiento:', this.proximaFechaMantenimiento);
           this.mantenimientoForm.reset();
           this.proximaFechaMantenimiento = null;
           this.mostrarBarraProgreso = false; // Ocultar la barra de progreso una vez que se han guardado los datos
@@ -91,7 +92,7 @@ export class ProgramarMantenimientoComponent implements OnInit {
     const diasRestantes = Math.ceil((fechaMantenimiento.getTime() - hoy.getTime()) / (1000 * 60 * 60 * 24));
 
     // Enviamos notificación cuando falten 80, 85 y 90 días para el próximo mantenimiento
-    if (diasRestantes === 80 || diasRestantes === 85 || diasRestantes === 90) {
+    if (diasRestantes === 1 || diasRestantes === 5 || diasRestantes === 10) {
       this.enviarNotificacion(`Faltan ${diasRestantes} días para el próximo mantenimiento`);
     }
 
