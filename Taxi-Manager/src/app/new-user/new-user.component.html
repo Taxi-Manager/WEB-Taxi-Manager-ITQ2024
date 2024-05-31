@@ -1,22 +1,17 @@
 <div class="container">
 <div class="btn">
    <label class="btn-t">NUEVO USUARIO</label>
-   <form id="r-form">
-      <input type="text" id="nuser" required>
+   <form [formGroup]="form" (ngSubmit)="onSubmit()"  id="r-form" >
+      <input type="text" id="nuser" formControlName="nuser" required>
       <label class="label" > Usuario </label>
-      <input type="password" id="pass-1" required>
+      <input type="password" id="pass-1" formControlName="pass" required>
       <label class="label" > Contraseña </label>
-      <input type="password"id="pass-2" required>
+      <input type="password"id="pass-2" formControlName="pass2" required>
       <label class="label" > Confirmar contraseña </label>
-      <input class="privi" type="checkbox" name="superadmin" value="true"><p class="superu">Super administrador</p> 
-      <input type="submit" value="Crear usuario">
+      <input class="privi" type="checkbox"   formControlName="admin"><p class="superu">Super administrador</p> 
+      <button type="submit">Crear usuario</button>
    </form>
 </div>
 <div><app-userexistente></app-userexistente></div>
 
 </div>
-<script>
-   document.addEventListener('DOMContentLoaded', () => {
-     crearuser();
-   });
- </script>

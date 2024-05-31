@@ -19,7 +19,7 @@ export const routes: Routes = [
   { path: 'conductores/subirdoc', component: SubirDocumentosComponent },
   { path: 'conductores/verificar', component: VerificarDocumentosComponent },
   { path: 'conductores/editar', component: EditDeleteUpdateComponent },
-  { path: 'new', component: NewUserComponent},
+  { path: 'opciones', component: NewUserComponent},
 
 
 

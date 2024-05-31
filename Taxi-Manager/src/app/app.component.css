@@ -205,3 +205,8 @@ ul>li>a.active{
       display: none;
   }
 }
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+}

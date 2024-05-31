@@ -20,8 +20,10 @@ html,body{
 }
 
 .btn{  cursor:default;
+  margin-top: 5%;
+  margin-left: -85px;
    width: 65%;
-   height: 100px;
+   height: 55px;
 background: linear-gradient(-135deg, #f0a418, #facb4b);   border-radius: 22px;
    display: flex;
    align-items: center; 
@@ -51,7 +53,7 @@ background: #fff;
    font-weight: bold; 
    font-size: 30px;
    color: #FCB240;
-   padding-bottom: 15%;
+   padding-bottom: 15.5%;
    
 
 }

@@ -1,10 +1,10 @@
-import { Component, ElementRef, OnInit, input } from '@angular/core';
+import { Component, ElementRef, OnInit, inject, input } from '@angular/core';
 import { Router, Event, NavigationEnd, RouterOutlet, RouterModule } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { LoginComponent } from './login/login.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { AuthService } from './login/login-iniciar';
 import { CrearConductorComponent } from './compGestionConductores/crear-conductor/crear-conductor.component';
 import { EditDeleteUpdateComponent } from './compGestionConductores/edit-delete-update/edit-delete-update.component';
 import { VerificarDocumentosComponent } from './compGestionConductores/verificar-documentos/verificar-documentos.component';
@@ -14,24 +14,27 @@ import { Pantalla3DComponent } from './componentes3D/pantalla3-d/pantalla3-d.com
 import { DashboardComponent } from './componentesPantallaMain/dashboard/dashboard.component';
 import { ReportesComponent } from "./componentesPantallaMain/reportes/reportes.component";
 import { CommonModule } from '@angular/common';
-import { DropdownService } from './dropdown.service';
 import { GarajeComponent } from './componentesGaraje/garaje/garaje.component';
+import { Firestore, collection, getDocs, query, where } from '@angular/fire/firestore';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  imports: [CommonModule,RouterModule, RouterOutlet,CrearConductorComponent,
-     EditDeleteUpdateComponent, VerificarDocumentosComponent,
-    SubirDocumentosComponent, ConsultarConductorComponent, 
-    Pantalla3DComponent, DashboardComponent, NewUserComponent,FormsModule,GarajeComponent, 
-    LoginComponent, ReportesComponent,ReactiveFormsModule]
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    imports: [CommonModule, RouterModule, RouterOutlet, CrearConductorComponent,
+        EditDeleteUpdateComponent, VerificarDocumentosComponent,
+        SubirDocumentosComponent, ConsultarConductorComponent,
+        Pantalla3DComponent, DashboardComponent, FormsModule, GarajeComponent,
+        LoginComponent, ReportesComponent, ReactiveFormsModule, NewUserComponent]
 })
 export class AppComponent implements OnInit {
+  private firestore: Firestore = inject(Firestore);
+  email: string = '';
+  adminPriviLetter: string = 'A';
   showNavbar = true;  // Inicialmente, asumimos que la barra de navegación debe mostrarse
 title = "Taxi Manager";
-  constructor(private el: ElementRef, private router: Router,private dropdownService: DropdownService) {
+  constructor(private el: ElementRef, private router: Router,private authService: AuthService) {
 
     
     // Nos suscribimos a los eventos de navegación para actualizar el estado de la barra de navegación
@@ -49,9 +52,17 @@ title = "Taxi Manager";
       this.showNavbar = event.url !== '/login';
     });
   }
-  ngOnInit(): void {
-    this.listenToRouteChanges();
-    this.dropdownService.initializeDropdowns();
+  ngOnInit() {
+    this.authService.user$.subscribe(user => {
+      if (user) {
+        this.showNavbar = true;
+        if (user.email) {  
+          this.checkAdminPrivi(user.email);
+        }
+      } else {
+        this.showNavbar = false;
+      }
+    });
   }
 
 initializeDropdowns(): void {
@@ -82,9 +93,36 @@ initializeDropdowns(): void {
       this.defaultStatus = true;
     }
     
-  }logout() {
+  }
+  
+  //checar privilegios
+  async checkAdminPrivi(email: string) {
+    try {
+      const usersCollection = collection(this.firestore, 'usuarios');
+      const q = query(usersCollection, where('email', '==', email));
+      const querySnapshot = await getDocs(q);
+
+      querySnapshot.forEach((doc) => {
+        const userData = doc.data();
+        this.adminPriviLetter = userData['adminprivi'] ? 'S' : 'A';
+      });
+    } catch (error) {
+      console.error('Error al recuperar los datos del usuario: ', error);
+    }
+  }
+
+
+  //cerrar sesion
+  logout() {
     this.router.navigate(['/login']).then(() => {
       this.showNavbar = false;  
     });
+  }
+
+  //privilegios admin
+  preventClick(event: MouseEvent, isDisabled: boolean) {
+    if (isDisabled) {
+      event.preventDefault();
+    }
   }
 }

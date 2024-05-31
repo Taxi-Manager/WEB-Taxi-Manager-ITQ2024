@@ -1,10 +1,10 @@
-<div class="btn">
-    <label class="btn-t">USUARIO 2</label>
-    <form>
-       
-       <input class="privi" type="checkbox" name="vehicle1" value="Bike"><p class="superu">Super administrador</p> 
-       <input  class="del"type="submit" value="Eliminar usuario">
-       <input class="guardar" type="submit" value="Guardar cambios">
-    </form>
+<div *ngFor="let user of usersData" class="btn">
+   <label class="btn-t">{{ user.username }}</label>
+   <form>
+     <input class="privi" type="checkbox">
+     <p class="superu">Super administrador</p> 
+     <input class="del" type="submit" value="Eliminar usuario">
+     <input class="guardar" type="submit" value="Guardar cambios">
+   </form>
  </div>
  

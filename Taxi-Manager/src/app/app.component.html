@@ -2,7 +2,9 @@
     <div class="topnav shadow p-1">
       <a>Taxi Manager</a>
       <span class="menu" (click)="openNav(true)"><i class="bi bi-list"></i></span>
-      <a routerLink="new" class="l-status">A</a>
+      <a routerLink="opciones" class="l-status" [class.disabled]="adminPriviLetter === 'A'"
+      [attr.disabled]="adminPriviLetter === 'A' ? true : null"
+      (click)="preventClick($event, adminPriviLetter === 'A')">{{ adminPriviLetter }}</a>
     </div>
     <div class="sidebar shadow p-2" id="sidebar">
       <ul>

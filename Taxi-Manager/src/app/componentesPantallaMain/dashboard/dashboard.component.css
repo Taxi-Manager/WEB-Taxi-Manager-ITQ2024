@@ -160,9 +160,14 @@ ul>li>a.active{
     max-width: 100%; /* Evita que la imagen se desborde del contenedor */
     height: auto; /* Mantiene la proporción de aspecto de la imagen */
     border-radius: 10px; /* Agrega esquinas redondeadas a la imagen */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave a la imagen */
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
+
+.main-content:hover img{
+    transform: scale(1.05);
+}
+
+
 .imagenes-container {
     display: flex; /* Utiliza flexbox para alinear las imágenes en una fila */
     justify-content: space-around; /* Distribuye el espacio alrededor de las imágenes */
