@@ -1,7 +1,7 @@
 /* Estilo general */
 .container {
   display: flex;
-  flex-direction: row;  /* Asegura que los elementos hijos estén en una fila */
+  flex-direction: row;  
   flex-wrap: wrap;  /* Permite que los elementos se envuelvan si no caben en una sola fila */
   justify-content: center;
   background-color: #f5f5f5;
@@ -72,34 +72,6 @@
 
 .taxi-characteristics li strong {
   font-weight: bold;
-}
-
-.topnav {
-  width: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  background-color: #fff;
-  border-bottom: 1px solid rgb(128, 128, 128);
-}
-
-.topnav a {
-  float: left;
-  text-align: center;
-  font-size: 17px;
-  font-weight: bold;
-  padding: 14px 16px;
-}
-
-.menu {
-  float: right;
-  margin-right: 10px;
-  margin-top: 10px;
-  font-weight: bold;
-  font-size: 30px;
-  cursor: pointer;
-  color: #000;
-  display: none;
 }
 
 /* Media queries para responsividad */
