@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Programar Mantenimiento</h2>
+  <form [formGroup]="mantenimientoForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="vehiculo">TZ del Vehículo para asociar:</label>
+      <select id="vehiculo" formControlName="vehiculo" class="form-control" required>
+        <option value="">Seleccione un Vehículo</option>
+        <option *ngFor="let tzvehiculo of vehiculos" [value]="tzvehiculo">{{ tzvehiculo }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="fechaMantenimiento">Última Fecha de Mantenimiento:</label>
+      <input type="date" id="fechaMantenimiento" formControlName="fechaMantenimiento" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="kilometraje">Kilometraje Actual:</label>
+      <input type="number" id="kilometraje" formControlName="kilometraje" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Verificación de Refacciones:</label>
+      <div formArrayName="refacciones">
+        <div *ngFor="let refaccion of refacciones.controls; let i = index" [formGroupName]="i">
+          <input type="text" formControlName="nombre" class="form-control" readonly>
+          <input type="checkbox" formControlName="verificado"> Verificado
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!mantenimientoForm.valid">Guardar</button>
+    <div class="form-group">
+      <label>Barra de Tiempo para el Próximo Mantenimiento:</label>
+      <div class="progress" *ngIf="mostrarBarraProgreso">
+        <div class="progress-bar" role="progressbar" [style.width.%]="calculateProgress()" aria-valuenow="calculateProgress()" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div *ngIf="!mostrarBarraProgreso">
+      </div>
+    </div>
+
+  <div class="form-group" *ngIf="proximaFechaMantenimiento">
+    <label>Próxima Fecha de Mantenimiento:</label>
+    <p>{{ proximaFechaMantenimiento }}</p>
+  </div>
+</form>
+</div>

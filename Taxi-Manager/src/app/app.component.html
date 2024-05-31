@@ -9,7 +9,18 @@
     <div class="sidebar shadow p-2" id="sidebar">
       <ul>
         <li><a routerLink="/dashboard"style="color: #f4c659;"><i class="bi bi-speedometer2"></i>Dashboard</a></li>
-        <li><a routerLink="/Reportes"><i class="bi bi-flag-fill"></i>Reportes</a></li>
+        
+        <li>
+          <a ><i class="bi bi-taxi-front-fill"></i>Reportes<i class="bi bi-arrow-down"></i></a>
+          <ul class="dropdown-container">
+            <li><a routerLink="/reportes/consulta-fallas">Consultar fallas</a></li>
+            <li><a routerLink="/reportes/consulta-mantenimiento">Consultar Mant.</a></li>
+            <li><a routerLink="/reportes/crear-falla">Crear falla</a></li>
+            <li><a routerLink="/reportes/programar">Programar</a></li>
+
+          </ul>
+        </li>
+
         <li>
           <a ><i class="bi bi-taxi-front-fill"></i>Taxis<i class="bi bi-arrow-down"></i></a>
           <ul class="dropdown-container">

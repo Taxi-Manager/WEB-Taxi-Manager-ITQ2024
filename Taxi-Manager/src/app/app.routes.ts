@@ -9,6 +9,10 @@ import { VerificarDocumentosComponent } from './compGestionConductores/verificar
 import { EditDeleteUpdateComponent } from './compGestionConductores/edit-delete-update/edit-delete-update.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { UserexistenteComponent } from './userexistente/userexistente.component';
+import { ConsultarFallasComponent } from './consultar-fallas/consultar-fallas.component';
+import { ConsultarMantenimientoComponent } from './consultar-mantenimiento/consultar-mantenimiento.component';
+import { CrearFallasComponent } from './crear-fallas/crear-fallas.component';
+import { ProgramarMantenimientoComponent } from './programar-mantenimiento/programar-mantenimiento.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -20,6 +24,12 @@ export const routes: Routes = [
   { path: 'conductores/verificar', component: VerificarDocumentosComponent },
   { path: 'conductores/editar', component: EditDeleteUpdateComponent },
   { path: 'opciones', component: NewUserComponent},
+  { path: 'reportes/consulta-fallas', component: ConsultarFallasComponent},
+  { path: 'reportes/consulta-mantenimiento', component: ConsultarMantenimientoComponent},
+  { path: 'reportes/crear-falla', component: CrearFallasComponent},
+  { path: 'reportes/programar', component: ProgramarMantenimientoComponent},
+
+
 
 
 

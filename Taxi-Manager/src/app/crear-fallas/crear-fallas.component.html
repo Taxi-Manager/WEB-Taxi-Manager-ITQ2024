@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Crear Fallas</h2>
+  <form (ngSubmit)="registrarFalla()" #fallaForm="ngForm">
+    <div class="form-group">
+      <label for="descripcion">Descripción de la Falla:</label>
+      <textarea id="descripcion" name="descripcion" [(ngModel)]="descripcion" class="form-control" rows="4" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="vehiculo">TZ del Vehículo para asociar:</label>
+      <input type="text" id="tzvehiculo" name="vehiculo" [(ngModel)]="tzvehiculo" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="diagnostico">Diagnóstico del Mecánico:</label>
+      <input type="text" id="diagnostico" name="diagnostico" [(ngModel)]="diagnostico" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="estadoVehiculo">Estado del Vehículo:</label>
+      <input type="text" id="estadoVehiculo" name="estadoVehiculo" [(ngModel)]="estadoVehiculo" class="form-control" readonly>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" id="deshabilitar" name="deshabilitar" [(ngModel)]="deshabilitarVehiculo" class="form-check-input" (change)="cambiarEstadoVehiculo()">
+      <label for="deshabilitar" class="form-check-label">Deshabilitar temporalmente el vehículo</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Registrar Falla</button>
+  </form>
+</div>

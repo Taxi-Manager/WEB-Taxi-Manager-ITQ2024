@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>Consultar Fallas</h2>
+
+  <!-- Filtrado por Estado -->
+  <div class="form-group">
+    <label for="estadoFiltro">Filtrar por Estado:</label>
+    <select id="estadoFiltro" [(ngModel)]="estadoFiltro" class="form-control" (change)="filtrarPorEstado()">
+      <option value="Todos">Todos</option>
+      <option value="Pendiente">Pendiente</option>
+      <option value="En proceso">En Proceso</option>
+      <option value="Concluida">Concluida</option>
+    </select>
+  </div>
+
+  <!-- Ordenación por Fecha -->
+  <div class="form-group">
+    <label for="ordenFecha">Ordenar por Fecha:</label>
+    <select id="ordenFecha" [(ngModel)]="ordenFecha" class="form-control" (change)="ordenarPorFecha()">
+      <option value="asc">Ascendente</option>
+      <option value="desc">Descendente</option>
+    </select>
+  </div>
+
+  <hr>
+
+  <!-- Detalles de las Fallas -->
+  <div *ngFor="let falla of fallasFiltradas">
+    <div class="card mb-3">
+      <div class="card-body">
+        <p class="card-text"><strong>Descripción:</strong> {{ falla.descripcion }}</p>
+        <p class="card-text"><strong>Estado falla :</strong> {{ falla.estadoFalla }}</p>
+        <p class="card-text"><strong>Estado vehiculo:</strong> {{ falla.estadoVehiculo }}</p>
+        <p class="card-text"><strong>Diagnóstico:</strong> {{ falla.diagnostico }}</p>
+        <p class="card-text"><strong>Tz del vehiculo asociado:</strong> {{ falla.tzvehiculo}}</p>
+        <p class="card-text"><strong>Fecha:</strong> {{ falla.fechaRegistro}}</p>
+
+        <button (click)="eliminarFalla(falla)" class="btn btn-danger">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>

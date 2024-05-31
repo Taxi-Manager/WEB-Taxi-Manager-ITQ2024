@@ -16,6 +16,10 @@ import { ReportesComponent } from "./componentesPantallaMain/reportes/reportes.c
 import { CommonModule } from '@angular/common';
 import { GarajeComponent } from './componentesGaraje/garaje/garaje.component';
 import { Firestore, collection, getDocs, query, where } from '@angular/fire/firestore';
+import { ConsultarMantenimientoComponent } from './consultar-mantenimiento/consultar-mantenimiento.component';
+import { ConsultarFallasComponent } from './consultar-fallas/consultar-fallas.component';
+import { CrearFallasComponent } from './crear-fallas/crear-fallas.component';
+import { ProgramarMantenimientoComponent } from './programar-mantenimiento/programar-mantenimiento.component';
 
 @Component({
     selector: 'app-root',
@@ -26,7 +30,9 @@ import { Firestore, collection, getDocs, query, where } from '@angular/fire/fire
         EditDeleteUpdateComponent, VerificarDocumentosComponent,
         SubirDocumentosComponent, ConsultarConductorComponent,
         Pantalla3DComponent, DashboardComponent, FormsModule, GarajeComponent,
-        LoginComponent, ReportesComponent, ReactiveFormsModule, NewUserComponent]
+        LoginComponent, ReportesComponent, ReactiveFormsModule, NewUserComponent,
+        ConsultarMantenimientoComponent, ConsultarFallasComponent, CrearFallasComponent,
+      ProgramarMantenimientoComponent]
 })
 export class AppComponent implements OnInit {
   private firestore: Firestore = inject(Firestore);
