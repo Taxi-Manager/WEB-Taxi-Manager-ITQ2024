@@ -2,7 +2,7 @@
   <h2>Consultar Mantenimiento</h2>
   <form (ngSubmit)="buscarHistorial()" #buscarForm="ngForm">
     <div class="form-group">
-      <label for="identificador">Buscar por Identificador Único (TZ):</label>
+      <label class="Textofiltro"for="identificador">Buscar por Identificador Único (TZ):</label>
       <input type="text" id="identificador" name="identificador" [(ngModel)]="identificador" class="form-control" required>
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="!buscarForm.form.valid">Buscar</button>
@@ -11,7 +11,7 @@
   <div *ngIf="busquedaRealizada">
     <hr>
     <div class="form-group">
-      <label for="mes">Filtrar por Mes:</label>
+      <label class="Textofecha" for="mes">Filtrar por Mes:</label>
       <select id="mes" name="mes" [(ngModel)]="mesSeleccionado" class="form-control" (ngModelChange)="filtrarPorMes()">
         <option value="0">Todos</option>
         <option value="1">Enero</option>
@@ -33,14 +33,18 @@
 
   <div *ngIf="historialFiltrado.length > 0">
     <h3>Historial de Mantenimiento para el Vehículo {{ identificador }}</h3>
-    <div *ngFor="let servicio of historialFiltrado">
+    <div  class="card mb-3">
+
+    
+    <div class="card-body" *ngFor="let servicio of historialFiltrado">
       <h4>Fecha: {{ servicio.fechaMantenimiento }}</h4>
-      <p>Kilometraje: {{ servicio.kilometraje }}</p>
-      <p>Próximo mantenimiento: {{ servicio.proximaFechaMantenimiento }}</p>
-      <p>Refacciones: </p>
+      <p class="card-text">Kilometraje: {{ servicio.kilometraje }}</p>
+      <p class="card-text">Próximo mantenimiento: {{ servicio.proximaFechaMantenimiento }}</p>
+      <p class="card-text">Refacciones: </p>
       <ul>
-        <li *ngFor="let refaccion of servicio.refacciones">{{ refaccion.nombre }} - {{ refaccion.verificado ? 'Verificado' : 'No verificado' }}</li>
+        <li class="card-text" *ngFor="let refaccion of servicio.refacciones">{{ refaccion.nombre }} - {{ refaccion.verificado ? 'Verificado' : 'No verificado' }}</li>
       </ul>
+    </div>
     </div>
   </div>
 

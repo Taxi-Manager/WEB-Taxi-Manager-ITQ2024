@@ -1,10 +1,15 @@
-<div *ngFor="let user of usersData" class="btn">
+<div [ngClass]="{'loadxd': isLoading}" class="load">
+  CARGANDO USUARIOS...
+</div>
+<div  [ngClass]="{'completo': completo}" *ngFor="let user of usersData" class="btn">
    <label class="btn-t">{{ user.username }}</label>
-   <form>
-     <input class="privi" type="checkbox">
+   <form >
+     <input class="privi" type="checkbox"
+     [checked]="user.adminprivi"
+     (change)="updateAdminPrivi($event, user)">
      <p class="superu">Super administrador</p> 
-     <input class="del" type="submit" value="Eliminar usuario">
-     <input class="guardar" type="submit" value="Guardar cambios">
-   </form>
+     <button class="del" type="button" (click)="deleteUser(user.id)">Eliminar usuario</button>
+     <button class="guardar" type="button" (click)="updateUser(user)">Guardar cambios</button>
+    </form>
  </div>
  

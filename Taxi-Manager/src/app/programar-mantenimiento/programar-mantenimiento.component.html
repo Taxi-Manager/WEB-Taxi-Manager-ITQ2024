@@ -19,9 +19,10 @@
     <div class="form-group">
       <label>Verificación de Refacciones:</label>
       <div formArrayName="refacciones">
-        <div *ngFor="let refaccion of refacciones.controls; let i = index" [formGroupName]="i">
+        <div class="form-group" *ngFor="let refaccion of refacciones.controls; let i = index" [formGroupName]="i">
           <input type="text" formControlName="nombre" class="form-control" readonly>
-          <input type="checkbox" formControlName="verificado"> Verificado
+          <input type="checkbox" class="form-check-input" id="verificado" name ="verificado" formControlName="verificado"> 
+          <label for="verificado" class="form-check-label">Verificado</label>
         </div>
       </div>
     </div>

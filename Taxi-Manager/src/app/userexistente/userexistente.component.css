@@ -16,26 +16,50 @@ html,body{
 }
 
 .btn form{
+  opacity: 0%;
       transform: scale(0);
 }
 
-.btn{  cursor:default;
+.load{
+  position: absolute;
+  right: 300px;
+  border: 1.5px solid #f0a418;
+  border-radius: 32px;
+  padding: 1%;
+  color: #f0a418;
+  bottom:36%;
+  font-weight:500;
+  transition: all 0.5s ease-in-out;
+}
+
+.loadxd{
+  transform: scale(0);
+}
+
+
+
+.btn{transform: scale(0);
+   cursor:default;
   margin-top: 5%;
   margin-left: -85px;
    width: 65%;
    height: 55px;
 background: linear-gradient(-135deg, #f0a418, #facb4b);   border-radius: 22px;
-   display: flex;
+   display: flex;/**  XD  **/
    align-items: center; 
    justify-content: center;
    box-shadow: 0px 40px 40px rgba(0,0,0,0.1);
    transition: all 0.5s ease;
-   border: none; 
+   border: none;
+}
+.completo{
+  transform: scale(1);
 }
 .btn .btn-t{
-   position: absolute;
+   position:fixed;
    color: white;
    font-size: 27px;
+
     text-align: center;
    font-weight: bold; 
       transition: all 0.5s ease;
@@ -53,15 +77,15 @@ background: #fff;
    font-weight: bold; 
    font-size: 30px;
    color: #FCB240;
-   padding-bottom: 15.5%;
+   padding-bottom: 67.5%;
    
 
 }
 .btn:hover form{
      transition: all 0.5s ease;
    transform: scale(.89);
-display: block;
-}
+   opacity: 100%;
+  }
 .btn form label{
    font-family: 'Poppins', sans-serif;
    position: relative;
@@ -73,7 +97,7 @@ display: block;
 
 }
 
-.btn form input{
+.btn form input, button{
   height: 45px;
   width: 100%;
   position: relative;
@@ -103,7 +127,7 @@ border: 3.5px solid red;
   transition: all 0.2s ease;
 }
 
-.btn .del:hover{  
+.btn  .del:hover{  
 
   transform: scale(1.09);
     border-color:red;
@@ -132,7 +156,7 @@ input[type="checkbox"]:hover{
 
 }
 
-.btn input[type="submit"]:active{
+.btn form button:active{
   transform: scale(0.95);
 }
 

@@ -3,8 +3,8 @@
 
   <!-- Filtrado por Estado -->
   <div class="form-group">
-    <label for="estadoFiltro">Filtrar por Estado:</label>
-    <select id="estadoFiltro" [(ngModel)]="estadoFiltro" class="form-control" (change)="filtrarPorEstado()">
+    <label class="Textofiltro" for="estadoFiltro">Filtrar por Estado:</label>
+    <select id="estadoFiltro" [(ngModel)]="estadoFiltro" class="form-control"  (change)="filtrarPorEstado()">
       <option value="Todos">Todos</option>
       <option value="Pendiente">Pendiente</option>
       <option value="En proceso">En Proceso</option>
@@ -14,7 +14,7 @@
 
   <!-- Ordenación por Fecha -->
   <div class="form-group">
-    <label for="ordenFecha">Ordenar por Fecha:</label>
+    <label class="Textofecha" for="ordenFecha">Ordenar por Fecha:</label>
     <select id="ordenFecha" [(ngModel)]="ordenFecha" class="form-control" (change)="ordenarPorFecha()">
       <option value="asc">Ascendente</option>
       <option value="desc">Descendente</option>
