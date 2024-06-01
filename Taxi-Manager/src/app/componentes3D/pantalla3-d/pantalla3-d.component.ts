@@ -76,7 +76,7 @@ export class Pantalla3DComponent implements OnInit {
   CreateScene(): Scene {
     const scene = new Scene(this.engine);
     const envTex = CubeTexture.CreateFromPrefilteredData(
-      "./assets/images/skyn.env",
+      "./assets/images/sky.env",
       scene
     );
   
@@ -90,7 +90,7 @@ export class Pantalla3DComponent implements OnInit {
     envTex.gammaSpace = false; // Habilitar espacio gamma si es necesario
   
     scene.environmentTexture = envTex;
-    scene.createDefaultSkybox(envTex, true, 1000, 0.1, true);
+    scene.createDefaultSkybox(envTex, true, 1000, 0.9, true);
     scene.environmentIntensity = 1;
   
     return scene;

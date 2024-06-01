@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { ReportesComponent } from '../reportes/reportes.component';
 import { RouterModule } from '@angular/router';
 import { Pantalla3DComponent } from '../../componentes3D/pantalla3-d/pantalla3-d.component';
+import { ComponentGraficaComponent } from "../../component-grafica/component-grafica.component";
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
-  imports: [CommonModule, ReportesComponent, RouterModule, Pantalla3DComponent],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+    selector: 'app-dashboard',
+    standalone: true,
+    templateUrl: './dashboard.component.html',
+    styleUrl: './dashboard.component.css',
+    imports: [CommonModule, ReportesComponent, RouterModule, Pantalla3DComponent, ComponentGraficaComponent]
 })
 
 export class DashboardComponent {

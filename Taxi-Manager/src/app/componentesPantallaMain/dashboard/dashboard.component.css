@@ -180,7 +180,8 @@ ul>li>a.active{
 }
 .contenedor-3d {
     display: block; /* Asegura que la imagen sea un elemento de bloque */
-    margin: 0 auto; /* Centra la imagen horizontalmente dentro de su contenedor */
+    margin-left: 180px;
+    position: relative; /* Centra la imagen horizontalmente dentro de su contenedor */
   }
 
 @media screen and (max-width:500px) {

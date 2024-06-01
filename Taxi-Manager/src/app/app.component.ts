@@ -20,6 +20,7 @@ import { ConsultarMantenimientoComponent } from './consultar-mantenimiento/consu
 import { ConsultarFallasComponent } from './consultar-fallas/consultar-fallas.component';
 import { CrearFallasComponent } from './crear-fallas/crear-fallas.component';
 import { ProgramarMantenimientoComponent } from './programar-mantenimiento/programar-mantenimiento.component';
+import { ComponentGraficaComponent } from './component-grafica/component-grafica.component';
 
 @Component({
     selector: 'app-root',
@@ -32,7 +33,7 @@ import { ProgramarMantenimientoComponent } from './programar-mantenimiento/progr
         Pantalla3DComponent, DashboardComponent, FormsModule, GarajeComponent,
         LoginComponent, ReportesComponent, ReactiveFormsModule, NewUserComponent,
         ConsultarMantenimientoComponent, ConsultarFallasComponent, CrearFallasComponent,
-      ProgramarMantenimientoComponent]
+      ProgramarMantenimientoComponent,ComponentGraficaComponent]
 })
 export class AppComponent implements OnInit {
   private firestore: Firestore = inject(Firestore);
