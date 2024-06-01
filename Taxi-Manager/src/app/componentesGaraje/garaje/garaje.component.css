@@ -64,18 +64,49 @@
 }
 
 .details {
-  width: 100%;
+  color:#FCB240;
+  height: 11%;
+  width: 30%;
+  position: flex;
+  padding-top: 1.7%;
+  padding-left: 2.5%;
+  margin-left: 1%;
+  margin-top: 14%;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  border-radius: 32px;
+  border: 2px solid #FCB240;
 }
 
 .details h1{
-  color: white;
+  
 }
 
+.details:hover  .taxi-characteristics{
+  transform: scaleY(1);  
+  transition: all 0.5s ease-in-out;
+  opacity: 100%;
+
+}
+.details:hover {
+  height: 35%;
+  background-color: #FCB240;
+  color: white;
+  border-color: white;
+  width: 55%;  margin-top: 0;
+
+}
+.details:active {
+  transform: scale(0.94);
+
+}
 .taxi-characteristics {
+  opacity: 0%;
+ 
   list-style: none;
-  padding: 0;
-  margin: 0;
-  
+  transform: scaleY(0);
+  transition: all 0.1s ease-in-out;
+  pointer-events: none;
 }
 
 .taxi-characteristics li {

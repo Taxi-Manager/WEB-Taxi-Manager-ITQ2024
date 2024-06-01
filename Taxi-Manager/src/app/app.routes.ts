@@ -13,6 +13,7 @@ import { ConsultarFallasComponent } from './consultar-fallas/consultar-fallas.co
 import { ConsultarMantenimientoComponent } from './consultar-mantenimiento/consultar-mantenimiento.component';
 import { CrearFallasComponent } from './crear-fallas/crear-fallas.component';
 import { ProgramarMantenimientoComponent } from './programar-mantenimiento/programar-mantenimiento.component';
+import { GarajeComponent } from './componentesGaraje/garaje/garaje.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -28,6 +29,8 @@ export const routes: Routes = [
   { path: 'reportes/consulta-mantenimiento', component: ConsultarMantenimientoComponent},
   { path: 'reportes/crear-falla', component: CrearFallasComponent},
   { path: 'reportes/programar', component: ProgramarMantenimientoComponent},
+  { path: 'garaje', component: GarajeComponent},
+
 
 
 
