@@ -71,10 +71,21 @@
   color: white;
 }
 
+.details-scan {
+  width: 100%;
+}
+
+.details-scan h1{
+  color: black;
+  padding-left: 100px; 
+}
+
+
 .taxi-characteristics {
   list-style: none;
   padding: 0;
   margin: 0;
+  
   
 }
 
@@ -87,7 +98,29 @@
 .taxi-characteristics li strong {
   font-weight: bold;
   color: white;
+  padding-left: 100px; 
 }
+
+
+.taxi-characteristics-scan {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 100px; 
+  
+}
+
+.taxi-characteristics-scan li {
+  padding: 5px 0;
+  color: black;
+
+}
+
+.taxi-characteristics-scan li strong {
+  font-weight: bold;
+  color: black;
+}
+
 
 /* Botones del carrusel */
 .carousel-button {

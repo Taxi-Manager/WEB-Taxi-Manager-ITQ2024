@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
 import { Pantalla3DComponent } from '../../componentes3D/pantalla3-d/pantalla3-d.component';
+import { Pantalla3DTaxiScanComponent } from '../../componentes3D/pantalla3-d-taxi-scan/pantalla3-d-taxi-scan.component';
+
 
 @Component({
   selector: 'app-garaje',
   standalone: true,
-  imports: [Pantalla3DComponent],
+  imports: [
+    Pantalla3DComponent,
+    Pantalla3DTaxiScanComponent
+  ],
   templateUrl: './garaje.component.html',
   styleUrl: './garaje.component.css'
 })
