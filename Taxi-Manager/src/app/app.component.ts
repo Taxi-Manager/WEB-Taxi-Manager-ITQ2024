@@ -21,6 +21,7 @@ import { ConsultarFallasComponent } from './consultar-fallas/consultar-fallas.co
 import { CrearFallasComponent } from './crear-fallas/crear-fallas.component';
 import { ProgramarMantenimientoComponent } from './programar-mantenimiento/programar-mantenimiento.component';
 import { ComponentGraficaComponent } from './component-grafica/component-grafica.component';
+import { Pantalla3DTaxiScanComponent } from './componentes3D/pantalla3-d-taxi-scan/pantalla3-d-taxi-scan.component';
 
 @Component({
     selector: 'app-root',
@@ -33,7 +34,7 @@ import { ComponentGraficaComponent } from './component-grafica/component-grafica
         Pantalla3DComponent, DashboardComponent, FormsModule, GarajeComponent,
         LoginComponent, ReportesComponent, ReactiveFormsModule, NewUserComponent,
         ConsultarMantenimientoComponent, ConsultarFallasComponent, CrearFallasComponent,
-      ProgramarMantenimientoComponent,ComponentGraficaComponent]
+      ProgramarMantenimientoComponent,ComponentGraficaComponent,Pantalla3DTaxiScanComponent]
 })
 export class AppComponent implements OnInit {
   private firestore: Firestore = inject(Firestore);

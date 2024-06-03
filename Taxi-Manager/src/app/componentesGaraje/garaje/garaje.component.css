@@ -104,9 +104,10 @@
   opacity: 0%;
  
   list-style: none;
-  transform: scaleY(0);
-  transition: all 0.1s ease-in-out;
-  pointer-events: none;
+  padding: 0;
+  margin: 0;
+  
+  
 }
 
 .taxi-characteristics li {
@@ -118,7 +119,29 @@
 .taxi-characteristics li strong {
   font-weight: bold;
   color: white;
+  padding-left: 100px; 
 }
+
+
+.taxi-characteristics-scan {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 100px; 
+  
+}
+
+.taxi-characteristics-scan li {
+  padding: 5px 0;
+  color: black;
+
+}
+
+.taxi-characteristics-scan li strong {
+  font-weight: bold;
+  color: black;
+}
+
 
 /* Botones del carrusel */
 .carousel-button {
