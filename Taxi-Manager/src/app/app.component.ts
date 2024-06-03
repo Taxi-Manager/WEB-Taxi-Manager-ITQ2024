@@ -60,7 +60,7 @@ title = "Taxi Manager";
       this.showNavbar = event.url !== '/login';
     });
   }
-  ngOnInit() {
+  ngOnInit() {this.logout();
     this.authService.user$.subscribe(user => {
       if (user) {
         this.showNavbar = true;
