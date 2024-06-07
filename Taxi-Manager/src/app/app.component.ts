@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
   email: string = '';
   adminPriviLetter: string = 'A';
   showNavbar = true;  // Inicialmente, asumimos que la barra de navegación debe mostrarse
-title = "Taxi Manager";
+  title = "Taxi Manager";
   constructor(private el: ElementRef, private router: Router,private authService: AuthService) {
 
     
